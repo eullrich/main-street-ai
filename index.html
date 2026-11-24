@@ -157,15 +157,6 @@
       .agenda-item p { color: var(--body); font-size: 0.98rem; display: inline; }
       .agenda-item p::before { content: " — "; color: var(--muted); }
 
-      /* Doing this responsibly */
-      .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-      .trust-card {
-        background: var(--surface); border: 1px solid var(--line);
-        border-radius: var(--radius); padding: 22px 22px 18px; box-shadow: var(--shadow);
-      }
-      .trust-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; }
-      .trust-card p { color: var(--body); font-size: 0.98rem; }
-
       /* Interest form: clean white card */
       .interest-card {
         background: var(--surface); border: 1px solid var(--line);
@@ -186,6 +177,15 @@
       .form-actions { margin-top: 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
       .form-note { font-size: 0.9rem; color: var(--muted); max-width: 34em; }
       .form-status { font-size: 0.96rem; font-weight: 700; color: var(--coral-hover); min-height: 1.4em; margin-top: 8px; }
+
+      /* In partnership */
+      .partner-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .partner-card {
+        background: var(--surface); border: 1px solid var(--line);
+        border-radius: var(--radius); padding: 20px 20px 16px; box-shadow: var(--shadow);
+      }
+      .partner-card h3 { font-size: 1.12rem; font-weight: 700; margin-bottom: 6px; line-height: 1.3; }
+      .partner-card p { color: var(--body); font-size: 0.96rem; line-height: 1.55; }
 
       footer { padding: 36px 0 48px; margin-top: 40px; border-top: 1px solid var(--line); text-align: center; }
       footer p { color: var(--body); font-size: 0.97rem; max-width: 46em; margin-left: auto; margin-right: auto; }
@@ -209,7 +209,7 @@
         .fact-strip { grid-template-columns: 1fr 1fr; }
         .fact:nth-child(3) { border-left: none; }
         .fact:nth-child(n+3) { border-top: 1px solid var(--line); }
-        .room-grid, .trust-grid, .form-grid { grid-template-columns: 1fr; }
+        .room-grid, .form-grid, .partner-grid { grid-template-columns: 1fr; }
         .agenda-item { grid-template-columns: 1fr; gap: 6px; }
         .agenda-time { justify-self: start; }
         .agenda-band, .interest-card { padding: 22px 18px; }
@@ -228,7 +228,7 @@
           </div>
           <div class="hero-art">
             <div class="toon-frame">
-              <img src="images/workshop-tables.webp" loading="eager" alt="Cartoon illustration of a pastel Main Street with a CPA tax office, a small law office, an insurance brokerage, a cafe, a senior center, a childcare center, and a public library. Diverse townspeople smile on the sidewalk with laptops, tablets, and notebooks while kids play soccer in the park behind the shops." />
+              <img src="images/main-street-hero.webp" loading="eager" alt="Cartoon illustration of a pastel Main Street with a CPA tax office, a small law office, an insurance brokerage, a cafe, a senior center, a childcare center, and a public library. Diverse townspeople smile on the sidewalk with laptops, tablets, and notebooks while kids play soccer in the park behind the shops." />
             </div>
           </div>
           <div class="hero-body">
@@ -299,7 +299,7 @@
           <h2>How the two hours run</h2>
           <p class="agenda-intro">Most of the session is hands-on work at your table, not slides.</p>
           <div class="agenda-photo">
-            <img src="images/main-street-hero.webp" loading="lazy" alt="Cartoon illustration of neighbors working together at round workshop tables with laptops and notebooks, testing AI tools on real tasks from their week." />
+            <img src="images/workshop-tables.webp" loading="lazy" alt="Cartoon illustration of neighbors working together at round workshop tables with laptops and notebooks, testing AI tools on real tasks from their week." />
           </div>
           <ol class="agenda-list">
             <li class="agenda-item">
@@ -341,28 +341,7 @@
         </div>
       </section>
 
-      <!-- ================= 4. DOING THIS RESPONSIBLY ================= -->
-      <section id="responsibly">
-        <div class="sec-head">
-          <h2>Doing this responsibly</h2>
-        </div>
-        <div class="trust-grid">
-          <article class="trust-card">
-            <h3>Keep private data out</h3>
-            <p>Never paste client names, account numbers, or health details. We show you how to strip them out first.</p>
-          </article>
-          <article class="trust-card">
-            <h3>A human checks everything</h3>
-            <p>AI drafts, you decide. Every email, guide, and post gets your eyes before it goes out.</p>
-          </article>
-          <article class="trust-card">
-            <h3>Know the limits</h3>
-            <p>These tools can sound sure and still be wrong. We flag what to double-check every time.</p>
-          </article>
-        </div>
-      </section>
-
-      <!-- ================= 5. SIGNUP + FOOTER ================= -->
+      <!-- ================= 4. SIGNUP + FOOTER ================= -->
       <div class="interest-card" id="interest">
         <h2>Save a spot</h2>
         <p>Capped at 25 seats so everyone gets hands-on help. Free tools only&mdash;no paid accounts needed.</p>
@@ -388,6 +367,28 @@
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
+
+      <!-- ================= 5. IN PARTNERSHIP ================= -->
+      <section id="partnership">
+        <div class="sec-head">
+          <h2>In partnership</h2>
+          <p>This workshop is designed to run in partnership with the local organizations that already support small businesses every day.</p>
+        </div>
+        <div class="partner-grid">
+          <article class="partner-card">
+            <h3>Chamber of Commerce</h3>
+            <p>Reaches local business owners and helps spread the word through a trusted network.</p>
+          </article>
+          <article class="partner-card">
+            <h3>City Business Development Department</h3>
+            <p>Connects small businesses across town and links them to city resources and support.</p>
+          </article>
+          <article class="partner-card">
+            <h3>County Business Development Department</h3>
+            <p>Brings regional reach and resources for businesses beyond a single town.</p>
+          </article>
+        </div>
+      </section>
 
       <footer>
         <p>Hosted by Eric Ullrich, a local neighbor who built his own small business with these same tools and wants to share what works.</p>
