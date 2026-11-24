@@ -265,6 +265,22 @@
       .form-note { font-size: 0.9rem; color: var(--muted); max-width: 34em; }
       .form-status { font-size: 0.96rem; font-weight: 700; color: var(--coral-hover); min-height: 1.4em; margin-top: 8px; }
 
+      /* Host bio */
+      .host-card {
+        background: var(--surface); border: 1px solid var(--line);
+        border-radius: 20px; padding: 34px 32px; margin: 52px 0 0; box-shadow: var(--shadow);
+      }
+      .host-card > h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 700; margin-bottom: 20px; }
+      .host-flex { display: flex; gap: 28px; align-items: flex-start; }
+      .host-photo {
+        flex: none; width: 120px; height: 120px; border-radius: 50%;
+        object-fit: cover; border: 1px solid var(--line);
+      }
+      .host-name { font-family: "Baloo 2", sans-serif; font-size: 1.35rem; font-weight: 700; color: var(--ink); line-height: 1.2; }
+      .host-role { font-weight: 700; font-size: 0.94rem; color: var(--muted); margin: 2px 0 12px; }
+      .host-text p { color: var(--body); }
+      .host-text p + p { margin-top: 10px; }
+
       footer { padding: 36px 0 48px; margin-top: 40px; border-top: 1px solid var(--line); text-align: center; }
       footer p { color: var(--body); font-size: 0.97rem; max-width: 46em; margin-left: auto; margin-right: auto; }
       footer p + p { margin-top: 8px; }
@@ -294,7 +310,9 @@
         .fact:nth-child(3) { border-left: none; }
         .fact:nth-child(n+3) { border-top: 1px solid var(--line); }
         .paths-grid, .story-grid, .room-grid, .form-grid { grid-template-columns: 1fr; }
-        .agenda-band, .interest-card { padding: 22px 18px; }
+        .agenda-band, .interest-card, .host-card { padding: 22px 18px; }
+        .host-flex { flex-direction: column; align-items: center; gap: 18px; }
+        .host-text { text-align: center; }
         .agenda-list, .agenda-step .step-intro { padding-left: 0; }
         .agenda-step { margin-top: 24px; }
       }
@@ -591,9 +609,24 @@
         </form>
       </div>
 
+      <!-- ================= 8. HOST BIO ================= -->
+      <section class="host-card" id="host">
+        <h2>Meet your host</h2>
+        <div class="host-flex">
+          <img class="host-photo" src="images/eric-headshot.jpg" loading="lazy" alt="Headshot photo of Eric Ullrich" />
+          <div class="host-text">
+            <div class="host-name">Eric Ullrich</div>
+            <div class="host-role">Founder, Candor Medicare &middot; Host, Main Street AI</div>
+            <p>Eric is a small business owner who built Candor Medicare, a local Medicare insurance agency in San Rafael, from the ground up. He runs the business on AI systems he built himself, from the website and marketing to the day-to-day client work, and leads a small team of agents.</p>
+            <p>Before Candor, Eric co-founded Hacker Lab, a multi-site startup incubator and makerspace community in Sacramento. He built and operated it for nearly 10 years, growing it to more than 300 members and a team of 12 across three facilities.</p>
+            <p>His passion is bringing people together. Eric believes the tools big companies use should work for Main Street too, so he started Main Street AI to gather local owners, professionals, and community groups in one room, learn from each other, and put practical AI skills to work in the businesses this community depends on.</p>
+          </div>
+        </div>
+      </section>
+
       <footer>
-        <p>Hosted by Eric Ullrich, a local neighbor who built his own small business with these same tools and wants to share what works.</p>
         <p>Want to co-host for your Chamber, library, or local group? <a href="mailto:eric@candor.financial">Get in touch &rarr;</a></p>
+        <p>Main Street AI &middot; Hosted by Eric Ullrich</p>
       </footer>
 
     </main>
