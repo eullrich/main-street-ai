@@ -90,6 +90,9 @@
         font-size: clamp(2rem, 4.6vw, 2.9rem); font-weight: 800;
         margin-bottom: 8px; max-width: none;
       }
+      .mission {
+        font-size: 1.12rem; color: var(--body); max-width: 44em; margin-top: 6px;
+      }
       .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0 4px; }
 
       .toon-frame {
@@ -119,22 +122,69 @@
       .sec-head h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 700; }
       .sec-head p { margin-top: 8px; color: var(--body); }
 
-      /* What you get: value props, 3 + 2 on desktop */
-      .value-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
-      .value-card {
-        grid-column: span 2;
+      /* Two paths */
+      .paths-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+      .path-card {
         background: var(--surface); border: 1px solid var(--line);
-        border-radius: var(--radius); padding: 20px 22px; box-shadow: var(--shadow);
+        border-radius: var(--radius); padding: 26px 24px 24px; box-shadow: var(--shadow);
+        display: flex; flex-direction: column;
       }
-      .value-card:nth-child(4), .value-card:nth-child(5) { grid-column: span 3; }
-      .value-icon {
-        width: 44px; height: 44px; border-radius: 12px;
+      .path-card > h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 14px; }
+      .path-block { margin-bottom: 16px; }
+      .path-block h4 {
+        font-family: "Baloo 2", sans-serif; font-size: 0.82rem; font-weight: 700;
+        letter-spacing: 0.07em; text-transform: uppercase; color: var(--coral-hover);
+        margin: 0 0 6px;
+      }
+      .path-block ul { list-style: none; margin: 0; padding: 0; }
+      .path-block li { color: var(--body); font-size: 0.97rem; padding: 3px 0 3px 18px; position: relative; }
+      .path-block li::before {
+        content: ""; position: absolute; left: 0; top: 0.62em;
+        width: 7px; height: 7px; border-radius: 50%; background: var(--coral);
+      }
+      .path-block p { color: var(--body); font-size: 0.97rem; }
+      .path-card .path-action { margin-top: auto; padding-top: 8px; }
+      .path-card .path-action .btn { width: 100%; }
+
+      /* Agenda: numbered steps in the sand container */
+      .agenda-band {
         background: var(--sand); border: 1px solid var(--line);
-        display: flex; align-items: center; justify-content: center;
-        color: var(--coral-hover); margin-bottom: 14px;
+        border-radius: 20px; padding: 28px 28px 22px; box-shadow: var(--shadow);
       }
-      .value-icon svg { width: 24px; height: 24px; display: block; }
-      .value-card h3 { font-size: 1.14rem; font-weight: 700; margin-bottom: 0; line-height: 1.3; color: var(--ink); }
+      .agenda-band h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 700; margin-bottom: 18px; }
+      .agenda-photo {
+        border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+        background: var(--surface); margin-bottom: 8px;
+      }
+      .agenda-photo img { width: 100%; height: auto; }
+      .agenda-step { margin-top: 30px; }
+      .agenda-step-head { display: flex; align-items: center; gap: 12px; margin-bottom: 4px; }
+      .step-num {
+        flex: none; width: 34px; height: 34px; border-radius: 50%;
+        background: var(--coral); color: #fff;
+        font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 1.05rem;
+        display: flex; align-items: center; justify-content: center;
+      }
+      .agenda-step h3.step-title { font-size: 1.3rem; font-weight: 700; color: var(--ink); }
+      .agenda-step .step-intro { color: var(--body); margin-bottom: 6px; max-width: 44em; padding-left: 46px; }
+      .agenda-list { list-style: none; margin: 0; padding: 0 0 0 46px; }
+      .agenda-item { padding: 10px 0; border-top: 1px solid var(--line); }
+      .agenda-item h3 { font-size: 1.06rem; font-weight: 700; display: inline; }
+      .agenda-item p { color: var(--body); font-size: 0.98rem; display: inline; }
+      .agenda-item p::before { content: ": "; color: var(--muted); }
+
+      /* In action: story cards */
+      .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+      .story-card {
+        background: var(--surface); border: 1px solid var(--line);
+        border-radius: var(--radius); padding: 24px 24px 20px; box-shadow: var(--shadow);
+      }
+      .story-card .story-name { font-family: "Baloo 2", sans-serif; font-size: 1.18rem; font-weight: 700; color: var(--ink); }
+      .story-card .story-place { font-weight: 700; font-size: 0.9rem; color: var(--coral-hover); margin-bottom: 10px; }
+      .story-card h3 { font-size: 1.14rem; font-weight: 700; margin-bottom: 6px; line-height: 1.3; }
+      .story-card p { color: var(--body); font-size: 0.97rem; }
+      .story-card.placeholder { border-style: dashed; background: transparent; box-shadow: none; }
+      .story-card.placeholder .story-name { color: var(--muted); }
 
       /* Who is in the room: 2x2 */
       .room-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
@@ -146,32 +196,18 @@
       .room-card .who { font-weight: 700; font-size: 0.92rem; color: var(--coral-hover); margin-bottom: 8px; }
       .room-card p.body { color: var(--body); font-size: 0.98rem; }
 
-      /* Agenda */
-      .agenda-band {
-        background: var(--sand); border: 1px solid var(--line);
-        border-radius: 20px; padding: 28px 28px 10px; box-shadow: var(--shadow);
+      /* What you get: bold-lead bullet list */
+      .get-list { list-style: none; margin: 0; padding: 0; max-width: 44em; }
+      .get-list li {
+        font-family: "Baloo 2", sans-serif; font-weight: 700; font-size: 1.1rem; color: var(--ink);
+        padding: 11px 0 11px 26px; position: relative; border-top: 1px solid var(--line);
       }
-      .agenda-band h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 700; margin-bottom: 6px; }
-      .agenda-band .agenda-intro { color: var(--body); margin-bottom: 18px; max-width: 44em; }
-      .agenda-photo {
-        border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
-        background: var(--surface); margin-bottom: 8px;
+      .get-list li:first-child { border-top: none; padding-top: 0; }
+      .get-list li::before {
+        content: ""; position: absolute; left: 2px; top: 1.05em;
+        width: 8px; height: 8px; border-radius: 50%; background: var(--coral);
       }
-      .agenda-photo img { width: 100%; height: auto; }
-      .agenda-group { margin-top: 26px; }
-      .agenda-group:first-of-type { margin-top: 20px; }
-      .agenda-group h3.agenda-group-title {
-        font-size: 1.28rem; font-weight: 700; color: var(--coral-hover); margin-bottom: 4px;
-      }
-      .agenda-group .agenda-group-intro { color: var(--body); margin-bottom: 6px; max-width: 44em; }
-      .agenda-list { list-style: none; margin: 0; padding: 0; }
-      .agenda-item {
-        padding: 12px 0; border-top: 1px solid var(--line);
-      }
-      .agenda-item h3 { font-size: 1.08rem; font-weight: 700; display: inline; }
-      .agenda-item p { color: var(--body); font-size: 0.98rem; display: inline; }
-      .agenda-item p::before { content: ": "; color: var(--muted); }
-      .agenda-band { padding-bottom: 22px; }
+      .get-list li:first-child::before { top: 0.55em; }
 
       /* Interest form: clean white card */
       .interest-card {
@@ -193,15 +229,6 @@
       .form-actions { margin-top: 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
       .form-note { font-size: 0.9rem; color: var(--muted); max-width: 34em; }
       .form-status { font-size: 0.96rem; font-weight: 700; color: var(--coral-hover); min-height: 1.4em; margin-top: 8px; }
-
-      /* In partnership */
-      .partner-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-      .partner-card {
-        background: var(--surface); border: 1px solid var(--line);
-        border-radius: var(--radius); padding: 20px 20px 16px; box-shadow: var(--shadow);
-      }
-      .partner-card h3 { font-size: 1.12rem; font-weight: 700; margin-bottom: 6px; line-height: 1.3; }
-      .partner-card p { color: var(--body); font-size: 0.96rem; line-height: 1.55; }
 
       footer { padding: 36px 0 48px; margin-top: 40px; border-top: 1px solid var(--line); text-align: center; }
       footer p { color: var(--body); font-size: 0.97rem; max-width: 46em; margin-left: auto; margin-right: auto; }
@@ -226,10 +253,10 @@
         .fact-strip { grid-template-columns: 1fr 1fr; }
         .fact:nth-child(3) { border-left: none; }
         .fact:nth-child(n+3) { border-top: 1px solid var(--line); }
-        .value-grid { grid-template-columns: 1fr; }
-        .value-card, .value-card:nth-child(4), .value-card:nth-child(5) { grid-column: auto; }
-        .room-grid, .form-grid, .partner-grid { grid-template-columns: 1fr; }
+        .paths-grid, .story-grid, .room-grid, .form-grid { grid-template-columns: 1fr; }
         .agenda-band, .interest-card { padding: 22px 18px; }
+        .agenda-list, .agenda-step .step-intro { padding-left: 0; }
+        .agenda-step { margin-top: 24px; }
       }
     </style>
   </head>
@@ -242,6 +269,7 @@
           <div class="hero-head">
             <span class="eyebrow">Main Street AI · [Town Name]</span>
             <h1>Practical AI to transform your operation</h1>
+            <p class="mission">Free, hands-on AI help for local small businesses, working alongside owners on projects they choose.</p>
           </div>
           <div class="hero-art">
             <div class="toon-frame">
@@ -276,49 +304,173 @@
         </div>
       </div>
 
-      <!-- ================= 2. WHAT YOU GET ================= -->
-      <section id="what-you-get">
+      <!-- ================= 2. TWO PATHS ================= -->
+      <section id="paths">
         <div class="sec-head">
-          <h2>What you get</h2>
+          <h2>Two ways to take part</h2>
         </div>
-        <div class="value-grid">
-          <article class="value-card">
-            <div class="value-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.8.7 1 1.5 1 2.5h6c0-1 .2-1.8 1-2.5A6 6 0 0 0 12 3z"/></svg>
+        <div class="paths-grid">
+          <article class="path-card">
+            <h3>Come to the workshop</h3>
+            <div class="path-block">
+              <h4>What you'll do together</h4>
+              <ul>
+                <li>Identify a task or opportunity that matters to your business.</li>
+                <li>Explore how AI can help and put it to work together.</li>
+                <li>Build skills you and your team can use independently.</li>
+              </ul>
             </div>
-            <h3>Ideas and Possibilities</h3>
+            <div class="path-block">
+              <h4>What you'll get</h4>
+              <ul>
+                <li>One-on-one guidance during the session.</li>
+                <li>Hands-on practice with the tools you already use.</li>
+                <li>A working project you leave with, built on your own laptop.</li>
+              </ul>
+            </div>
+            <div class="path-block">
+              <h4>Who it's for</h4>
+              <p>Independently owned local businesses and community organizations. No technical experience needed.</p>
+            </div>
+            <div class="path-action">
+              <a class="btn btn-primary" href="#interest">Save a Spot</a>
+            </div>
           </article>
-          <article class="value-card">
-            <div class="value-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4.5V3h6v1.5"/><path d="M9 12l2 2 4-4"/></svg>
+          <article class="path-card">
+            <h3>Host or co-host</h3>
+            <div class="path-block">
+              <h4>What you'll contribute</h4>
+              <ul>
+                <li>A welcoming venue, a library, community center, or campus room.</li>
+                <li>Help spreading the word to your members and neighbors.</li>
+                <li>A short welcome to open the session.</li>
+              </ul>
             </div>
-            <h3>Actionable Implementation Tips</h3>
-          </article>
-          <article class="value-card">
-            <div class="value-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.8v3M12 18.2v3M2.8 12h3M18.2 12h3M5.5 5.5l2.1 2.1M16.4 16.4l2.1 2.1M18.5 5.5l-2.1 2.1M7.6 16.4l-2.1 2.1"/></svg>
+            <div class="path-block">
+              <h4>What you'll get</h4>
+              <ul>
+                <li>A free, ready-to-run program for your members and community.</li>
+                <li>A local partner who handles the teaching and materials.</li>
+                <li>Credit as a co-host on the page and at the session.</li>
+              </ul>
             </div>
-            <h3>AI Automation Best Practices</h3>
-          </article>
-          <article class="value-card">
-            <div class="value-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5.5" r="2.3"/><circle cx="5" cy="18" r="2.3"/><circle cx="19" cy="18" r="2.3"/><path d="M10.8 7.3L6.2 15.9M13.2 7.3l4.6 8.6M7.3 18h9.4"/></svg>
+            <div class="path-block">
+              <h4>Who it's for</h4>
+              <p>Chambers of commerce, city and county business development teams, libraries, and community colleges.</p>
             </div>
-            <h3>Agent Swarms and OpenClaw</h3>
-          </article>
-          <article class="value-card">
-            <div class="value-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-8 8H4l2.3-2.9A8 8 0 1 1 21 12z"/><path d="M8.5 10.5l2.5 2-2.5 2M13 14.5h3"/></svg>
+            <div class="path-action">
+              <a class="btn btn-outline" href="mailto:eric@candor.financial">Get in Touch</a>
             </div>
-            <h3>Prompting</h3>
           </article>
         </div>
       </section>
 
-      <!-- ================= 3. WHO IS IN THE ROOM ================= -->
+      <!-- ================= 3. AGENDA ================= -->
+      <section id="agenda">
+        <div class="agenda-band">
+          <h2>What we'll do together</h2>
+          <div class="agenda-photo">
+            <img src="images/workshop-tables.webp" loading="lazy" alt="Cartoon illustration of neighbors working together at round workshop tables with laptops and notebooks, testing AI tools on real tasks from their week." />
+          </div>
+
+          <div class="agenda-step">
+            <div class="agenda-step-head">
+              <span class="step-num" aria-hidden="true">1</span>
+              <h3 class="step-title">See what is possible</h3>
+            </div>
+            <p class="step-intro">Real life transformations of small business operations.</p>
+            <ul class="agenda-list">
+              <li class="agenda-item">
+                <h3>Marketing</h3>
+                <p>a week of social posts and customer emails drafted in one sitting.</p>
+              </li>
+              <li class="agenda-item">
+                <h3>Finance</h3>
+                <p>invoices, receipts, and cash flow summaries prepared automatically.</p>
+              </li>
+              <li class="agenda-item">
+                <h3>Admin</h3>
+                <p>scheduling, intake forms, and follow-up handled without the paper chase.</p>
+              </li>
+              <li class="agenda-item">
+                <h3>Operations</h3>
+                <p>checklists and hand-offs that keep the whole team in sync.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="agenda-step">
+            <div class="agenda-step-head">
+              <span class="step-num" aria-hidden="true">2</span>
+              <h3 class="step-title">Put it to work on your project</h3>
+            </div>
+            <ul class="agenda-list">
+              <li class="agenda-item">
+                <h3>Pain point identification</h3>
+                <p>name the task that eats your week.</p>
+              </li>
+              <li class="agenda-item">
+                <h3>Ideation and system possibilities</h3>
+                <p>map what AI could take off your plate.</p>
+              </li>
+              <li class="agenda-item">
+                <h3>Honing projects</h3>
+                <p>leave with one working project, built on your own laptop.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="agenda-step">
+            <div class="agenda-step-head">
+              <span class="step-num" aria-hidden="true">3</span>
+              <h3 class="step-title">Build skills to use on your own</h3>
+            </div>
+            <ul class="agenda-list">
+              <li class="agenda-item">
+                <h3>Prompting</h3>
+                <p>how to ask so you get usable results the first time.</p>
+              </li>
+              <li class="agenda-item">
+                <h3>Tool connectors</h3>
+                <p>connect AI to the tools you already use, like email, calendars, and spreadsheets.</p>
+              </li>
+              <li class="agenda-item">
+                <h3>AI automation best practices</h3>
+                <p>automate the repetitive work, safely and sensibly.</p>
+              </li>
+              <li class="agenda-item">
+                <h3>Agent swarms and OpenClaw</h3>
+                <p>a plain-English look at AI agents working as a team.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 4. IN ACTION ================= -->
+      <section id="in-action">
+        <div class="sec-head">
+          <h2>Main Street AI in action</h2>
+        </div>
+        <div class="story-grid">
+          <article class="story-card">
+            <div class="story-name">Candor Medicare</div>
+            <div class="story-place">San Rafael, California</div>
+            <h3>A local business run on AI systems</h3>
+            <p>Eric Ullrich built his Medicare insurance business with AI at the center: the website, marketing, client workflows, and day-to-day operations all run on AI tools, supporting a small team of agents. Main Street AI is how he teaches the same approach to other local businesses.</p>
+          </article>
+          <article class="story-card placeholder">
+            <div class="story-name">Your business, featured here</div>
+            <p>Stories from the first workshop will be added here, with the results each owner achieved.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================= 5. WHO IT'S FOR ================= -->
       <section id="who">
         <div class="sec-head">
           <h2>Who is in the room</h2>
+          <p>Open to independently owned local businesses and community organizations. Participation is free, bring a laptop.</p>
         </div>
         <div class="room-grid">
           <article class="room-card">
@@ -344,101 +496,24 @@
         </div>
       </section>
 
-      <!-- ================= 3. AGENDA ================= -->
-      <section id="agenda">
-        <div class="agenda-band">
-          <h2>Agenda</h2>
-          <p class="agenda-intro">Most of the session is hands-on work at your table, not slides.</p>
-          <div class="agenda-photo">
-            <img src="images/workshop-tables.webp" loading="lazy" alt="Cartoon illustration of neighbors working together at round workshop tables with laptops and notebooks, testing AI tools on real tasks from their week." />
-          </div>
-          <div class="agenda-group">
-            <h3 class="agenda-group-title">First, see what is possible</h3>
-            <p class="agenda-group-intro">Real life transformations of small business operations, with a concrete example for each area.</p>
-            <ul class="agenda-list">
-              <li class="agenda-item">
-                <h3>Marketing</h3>
-                <p>a week of social posts and customer emails drafted in one sitting.</p>
-              </li>
-              <li class="agenda-item">
-                <h3>Finance</h3>
-                <p>invoices, receipts, and cash flow summaries prepared automatically.</p>
-              </li>
-              <li class="agenda-item">
-                <h3>Admin</h3>
-                <p>scheduling, intake forms, and follow-up handled without the paper chase.</p>
-              </li>
-              <li class="agenda-item">
-                <h3>Operations</h3>
-                <p>checklists and hand-offs that keep the whole team in sync.</p>
-              </li>
-            </ul>
-          </div>
-
-          <div class="agenda-group">
-            <h3 class="agenda-group-title">Then, the workshop</h3>
-            <ul class="agenda-list">
-              <li class="agenda-item">
-                <h3>Pain point identification</h3>
-                <p>name the task that eats your week.</p>
-              </li>
-              <li class="agenda-item">
-                <h3>Ideation and system possibilities</h3>
-                <p>map what AI could take off your plate.</p>
-              </li>
-              <li class="agenda-item">
-                <h3>Honing projects</h3>
-                <p>leave with one working project, built on your own laptop.</p>
-              </li>
-            </ul>
-          </div>
-
-          <div class="agenda-group">
-            <h3 class="agenda-group-title">Tactics for working with AI</h3>
-            <ul class="agenda-list">
-              <li class="agenda-item">
-                <h3>Prompting</h3>
-                <p>how to ask so you get usable results the first time.</p>
-              </li>
-              <li class="agenda-item">
-                <h3>Tool connectors</h3>
-                <p>connect AI to the tools you already use, like email, calendars, and spreadsheets.</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================= 4. IN PARTNERSHIP ================= -->
-      <section id="partnership">
+      <!-- ================= 6. WHAT YOU GET ================= -->
+      <section id="what-you-get">
         <div class="sec-head">
-          <h2>In partnership</h2>
-          <p>This workshop is designed to run in partnership with the local organizations that already support small businesses every day.</p>
+          <h2>What you get</h2>
         </div>
-        <div class="partner-grid">
-          <article class="partner-card">
-            <h3>Chamber of Commerce</h3>
-            <p>Reaches local business owners and helps spread the word through a trusted network.</p>
-          </article>
-          <article class="partner-card">
-            <h3>City Business Development Department</h3>
-            <p>Connects small businesses across town and links them to city resources and support.</p>
-          </article>
-          <article class="partner-card">
-            <h3>County Business Development Department</h3>
-            <p>Brings regional reach and resources for businesses beyond a single town.</p>
-          </article>
-          <article class="partner-card">
-            <h3>Community College</h3>
-            <p>Offers a welcoming classroom venue, lifelong learning students, and workforce training connections.</p>
-          </article>
-        </div>
+        <ul class="get-list">
+          <li>Ideas and Possibilities</li>
+          <li>Actionable Implementation Tips</li>
+          <li>AI Automation Best Practices</li>
+          <li>Agent Swarms and OpenClaw</li>
+          <li>Prompting</li>
+        </ul>
       </section>
 
-      <!-- ================= 5. SIGNUP + FOOTER ================= -->
+      <!-- ================= 7. SIGNUP + FOOTER ================= -->
       <div class="interest-card" id="interest">
         <h2>Save a spot</h2>
-        <p>Capped at 25 seats so everyone gets hands-on help. Free tools only&mdash;no paid accounts needed.</p>
+        <p>Capped at 25 seats so everyone gets hands-on help. Free tools only, no paid accounts needed.</p>
         <form id="interest-form" novalidate>
           <div class="form-grid">
             <div class="field">
