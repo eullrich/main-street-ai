@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="light" />
     <link rel="icon" href="data:," />
     <title>Main Street AI · [Town Name]</title>
     <meta name="description" content="A free, hands-on, two-hour workshop for local businesses, professionals, and nonprofits. Bring a real task from your week, leave with a working shortcut you can use tomorrow." />
@@ -13,47 +13,23 @@
     <meta property="og:image" content="images/main-street-hero.webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
     <style>
       button, [role="button"], select, summary, input:not([type="checkbox"], [type="radio"]), textarea { min-height: 2.25rem; }
 
       :root {
-        --bg: #eef7fc;
-        --surface: #ffffff;
-        --ink: #3b3455;
-        --muted: #6a6285;
-        --line: #ddd6ee;
-        --coral: #e2604d;
-        --coral-deep: #c94c3a;
-        --sky-soft: #dff1fb;
-        --mint: #8fd6b4;
-        --mint-soft: #e2f5ea;
-        --peach: #ffb08a;
-        --peach-soft: #ffe9db;
-        --butter: #ffd968;
-        --butter-soft: #fff3cf;
-        --lav: #b9a7e6;
-        --band: #453a68;
-        --band-ink: #f6f2ff;
-        --shadow: 0 12px 28px rgba(59, 52, 85, 0.13);
-        --radius: 22px;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg: #232038;
-          --surface: #2f2a4a;
-          --ink: #f2eefc;
-          --muted: #c2badd;
-          --line: #4c4470;
-          --coral: #ff8a76;
-          --coral-deep: #ffa08e;
-          --sky-soft: #2c3a55;
-          --mint-soft: #27443a;
-          --peach-soft: #4a3428;
-          --butter-soft: #4a3f22;
-          --band: #17142a;
-          --shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
-        }
+        --bg: #FAF7F2;
+        --surface: #FFFFFF;
+        --ink: #1E293B;
+        --body: #475569;
+        --muted: #5B6B82;
+        --line: #E5E0D8;
+        --coral: #D95D48;
+        --coral-hover: #C04A36;
+        --sand: #F3EFE6;
+        --shadow: 0 4px 18px rgba(30, 41, 59, 0.07);
+        --shadow-lg: 0 10px 30px rgba(30, 41, 59, 0.10);
+        --radius: 16px;
       }
 
       * { box-sizing: border-box; }
@@ -62,157 +38,181 @@
       body {
         margin: 0;
         background: var(--bg);
-        color: var(--ink);
+        color: var(--body);
         font-family: "Nunito", system-ui, -apple-system, sans-serif;
         font-size: 17px;
         line-height: 1.6;
       }
-      h1, h2, h3 { font-family: "Baloo 2", "Nunito", sans-serif; line-height: 1.12; margin: 0; }
+      h1, h2, h3 { font-family: "Baloo 2", "Nunito", sans-serif; color: var(--ink); line-height: 1.15; margin: 0; }
       p { margin: 0; }
-      a { color: var(--coral-deep); }
-      @media (prefers-color-scheme: dark) { a { color: var(--coral); } }
+      a { color: var(--coral-hover); }
       img { max-width: 100%; display: block; }
 
       .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
 
-      /* ---------- Hero ---------- */
-      .hero { padding: 46px 0 4px; text-align: center; }
-      .sign {
-        display: inline-block;
-        background: var(--surface);
-        border: 3px solid var(--ink);
-        border-radius: 18px;
-        box-shadow: 0 5px 0 var(--ink);
-        padding: 10px 26px 12px;
-        transform: rotate(-1.2deg);
-      }
-      .sign .sign-name {
-        font-family: "Baloo 2", sans-serif; font-weight: 800;
-        font-size: clamp(1.9rem, 5.5vw, 3rem); letter-spacing: 0.01em; line-height: 1;
-      }
-      .sign .sign-name .ai { color: var(--coral); }
-      .sign .sign-tag {
-        font-weight: 800; font-size: 0.92rem; letter-spacing: 0.14em; text-transform: uppercase;
-        color: var(--muted); margin-top: 5px;
-      }
-      .hero h1 {
-        font-size: clamp(1.7rem, 4.4vw, 2.5rem); font-weight: 700;
-        margin: 30px auto 14px; max-width: 20em;
-      }
-      .hero .lede { font-size: 1.13rem; color: var(--muted); max-width: 42em; margin: 0 auto; }
-      .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 26px 0 10px; justify-content: center; }
-      .trust-line { font-size: 0.95rem; font-weight: 600; color: var(--muted); margin: 0 auto 26px; }
+      /* ---------- Buttons ---------- */
       .btn {
         display: inline-flex; align-items: center; justify-content: center;
         min-height: 50px; padding: 12px 26px; border-radius: 999px;
         font-family: "Baloo 2", sans-serif; font-weight: 700; font-size: 1.05rem;
-        text-decoration: none; cursor: pointer; border: 2.5px solid var(--ink);
-        box-shadow: 0 4px 0 var(--ink); transition: transform 0.08s ease, box-shadow 0.08s ease;
+        text-decoration: none; cursor: pointer;
+        transition: background 0.15s ease, border-color 0.15s ease;
       }
-      .btn:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--ink); }
       @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
-      .btn-primary { background: var(--coral); color: #fff; }
-      @media (prefers-color-scheme: dark) { .btn-primary { color: #2a1408; } }
-      .btn-ghost { background: var(--surface); color: var(--ink); }
+      .btn-primary { background: var(--coral); color: #fff; border: 2px solid var(--coral); }
+      .btn-primary:hover { background: var(--coral-hover); border-color: var(--coral-hover); }
+      .btn-outline { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
+      .btn-outline:hover { background: var(--ink); color: #fff; }
 
-      .fact-strip {
-        display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 26px;
+      /* ---------- Hero ---------- */
+      .hero { padding: 44px 0 8px; }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.02fr 0.98fr;
+        grid-template-areas:
+          "head art"
+          "body art";
+        column-gap: 36px;
+        row-gap: 0;
+        align-items: start;
       }
-      .fact {
-        border-radius: 18px; padding: 14px 16px; text-align: left;
-        border: 2px solid var(--ink);
+      .hero-head { grid-area: head; }
+      .hero-body { grid-area: body; }
+      .hero-art { grid-area: art; align-self: center; }
+
+      .eyebrow {
+        display: inline-block;
+        font-weight: 800; font-size: 0.88rem; letter-spacing: 0.1em; text-transform: uppercase;
+        color: var(--coral-hover);
+        margin-bottom: 14px;
       }
-      .fact.f1 { background: var(--sky-soft); }
-      .fact.f2 { background: var(--mint-soft); }
-      .fact.f3 { background: var(--butter-soft); }
-      .fact.f4 { background: var(--peach-soft); }
-      .fact .f-label { font-size: 0.76rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
-      .fact .f-value { font-weight: 800; font-size: 0.97rem; margin-top: 3px; line-height: 1.4; color: var(--ink); }
+      .hero h1 {
+        font-size: clamp(2rem, 4.6vw, 2.9rem); font-weight: 800;
+        margin-bottom: 16px; max-width: 14em;
+      }
+      .hero .lede { font-size: 1.12rem; color: var(--body); max-width: 32em; }
+      .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0 12px; }
+      .trust-line { font-size: 0.95rem; font-weight: 600; color: var(--muted); }
 
       .toon-frame {
-        border: 3px solid var(--ink); border-radius: 26px; overflow: hidden;
-        box-shadow: var(--shadow); background: var(--surface);
+        border: 1px solid var(--line); border-radius: 20px; overflow: hidden;
+        box-shadow: var(--shadow-lg); background: var(--surface);
       }
       .toon-frame img { width: 100%; height: auto; }
 
-      /* ---------- Sections ---------- */
-      section { padding: 52px 0 4px; }
-      .sec-head { max-width: 44em; margin-bottom: 28px; }
-      .sec-head h2 { font-size: clamp(1.8rem, 4.4vw, 2.5rem); font-weight: 700; }
+      /* Details strip: one unified neutral bar */
+      .fact-strip {
+        display: grid; grid-template-columns: repeat(4, 1fr);
+        background: var(--surface);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        margin-top: 32px;
+        overflow: hidden;
+      }
+      .fact { padding: 16px 18px; }
+      .fact + .fact { border-left: 1px solid var(--line); }
+      .fact .f-label { font-size: 0.76rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+      .fact .f-value { font-weight: 700; font-size: 0.97rem; margin-top: 3px; line-height: 1.4; color: var(--ink); }
 
-      /* Who it's for */
-      .build-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-      .build-card {
-        background: var(--surface); border: 2px solid var(--line);
-        border-radius: var(--radius); padding: 24px 22px 20px; overflow: hidden; position: relative;
+      /* ---------- Sections ---------- */
+      section { padding: 48px 0 4px; }
+      .sec-head { max-width: 44em; margin-bottom: 24px; }
+      .sec-head h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 700; }
+      .sec-head p { margin-top: 8px; color: var(--body); }
+
+      /* Who is in the room: 2x2 */
+      .room-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+      .room-card {
+        background: var(--surface); border: 1px solid var(--line);
+        border-radius: var(--radius); padding: 22px 22px 18px; box-shadow: var(--shadow);
       }
-      .build-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 10px; }
-      .build-card.b-lav::before { background: var(--lav); }
-      .build-card.b-mint::before { background: var(--mint); }
-      .build-card.b-peach::before { background: var(--peach); }
-      .build-card h3 { font-size: 1.28rem; font-weight: 700; margin: 6px 0 4px; }
-      .build-card .who { font-weight: 800; font-size: 0.92rem; margin-bottom: 10px; }
-      .b-lav .who { color: #7a5fc0; } .b-mint .who { color: #2f8f5f; } .b-peach .who { color: #d96f36; }
-      @media (prefers-color-scheme: dark) {
-        .b-lav .who { color: var(--lav); } .b-mint .who { color: var(--mint); } .b-peach .who { color: var(--peach); }
-      }
-      .build-card p.body { color: var(--muted); font-size: 0.98rem; }
+      .room-card h3 { font-size: 1.22rem; font-weight: 700; margin-bottom: 2px; }
+      .room-card .who { font-weight: 700; font-size: 0.92rem; color: var(--coral-hover); margin-bottom: 8px; }
+      .room-card p.body { color: var(--body); font-size: 0.98rem; }
 
       /* Agenda */
       .agenda-band {
-        background: var(--butter-soft); border: 2.5px solid var(--ink);
-        border-radius: 26px; padding: 30px 30px 12px; box-shadow: var(--shadow);
+        background: var(--sand); border: 1px solid var(--line);
+        border-radius: 20px; padding: 28px 28px 10px; box-shadow: var(--shadow);
       }
-      .agenda-band h2 { font-size: clamp(1.8rem, 4.4vw, 2.5rem); font-weight: 700; margin-bottom: 8px; }
+      .agenda-band h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 700; margin-bottom: 6px; }
+      .agenda-band .agenda-intro { color: var(--body); margin-bottom: 18px; max-width: 44em; }
+      .agenda-photo {
+        border: 1px solid var(--line); border-radius: 14px; overflow: hidden;
+        background: var(--surface); margin-bottom: 8px;
+      }
+      .agenda-photo img { width: 100%; height: auto; }
       .agenda-list { list-style: none; margin: 0; padding: 0; }
       .agenda-item {
-        display: grid; grid-template-columns: 122px 1fr; gap: 18px;
-        padding: 17px 0; border-top: 2px dotted var(--line);
+        display: grid; grid-template-columns: 118px 1fr; gap: 16px; align-items: baseline;
+        padding: 15px 0; border-top: 1px solid var(--line);
       }
-      .agenda-item:first-child { border-top: none; }
       .agenda-time {
-        font-family: "Baloo 2", sans-serif; font-weight: 700; font-size: 0.98rem; white-space: nowrap;
-        background: var(--surface); border: 2px solid var(--ink); border-radius: 999px;
-        padding: 3px 12px; text-align: center; align-self: start; color: var(--ink);
+        font-family: "Baloo 2", sans-serif; font-weight: 700; font-size: 0.95rem; white-space: nowrap;
+        background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
+        padding: 3px 12px; text-align: center; color: var(--ink);
       }
-      .agenda-item h3 { font-size: 1.12rem; font-weight: 700; margin-bottom: 3px; }
-      .agenda-item p { color: var(--muted); font-size: 0.98rem; max-width: 46em; }
+      .agenda-item h3 { font-size: 1.08rem; font-weight: 700; display: inline; }
+      .agenda-item p { color: var(--body); font-size: 0.98rem; display: inline; }
+      .agenda-item p::before { content: " — "; color: var(--muted); }
 
-      /* Interest form */
-      .interest-band {
-        background: var(--band); color: var(--band-ink); border: 3px solid var(--ink);
-        border-radius: 26px; padding: 38px 34px; margin: 56px 0 0; box-shadow: var(--shadow);
+      /* Doing this responsibly */
+      .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .trust-card {
+        background: var(--surface); border: 1px solid var(--line);
+        border-radius: var(--radius); padding: 22px 22px 18px; box-shadow: var(--shadow);
       }
-      .interest-band h2 { font-size: clamp(1.7rem, 4.4vw, 2.4rem); font-weight: 700; margin-bottom: 10px; color: #ffffff; }
-      .interest-band > p { color: #d9d2f2; max-width: 42em; margin-bottom: 24px; }
+      .trust-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; }
+      .trust-card p { color: var(--body); font-size: 0.98rem; }
+
+      /* Interest form: clean white card */
+      .interest-card {
+        background: var(--surface); border: 1px solid var(--line);
+        border-radius: 20px; padding: 34px 32px; margin: 52px 0 0; box-shadow: var(--shadow);
+      }
+      .interest-card h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 700; margin-bottom: 8px; }
+      .interest-card > p { color: var(--body); max-width: 42em; margin-bottom: 22px; }
       .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
       .field { display: flex; flex-direction: column; gap: 6px; }
       .field.full { grid-column: 1 / -1; }
-      .field label { font-size: 0.9rem; font-weight: 800; color: #efeaff; }
+      .field label { font-size: 0.9rem; font-weight: 800; color: var(--ink); }
       .field input {
-        font: inherit; font-size: 1rem; color: #3b3455;
-        background: #ffffff; border: 2px solid #17142a; border-radius: 14px;
+        font: inherit; font-size: 1rem; color: var(--ink);
+        background: #FFFFFF; border: 1px solid #CBD5E1; border-radius: 10px;
         padding: 10px 13px; width: 100%;
       }
+      .field input:focus { outline: 2px solid var(--coral); outline-offset: 1px; border-color: var(--coral); }
       .form-actions { margin-top: 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
-      .btn-butter { background: var(--butter); color: #4a3803; }
-      .form-note { font-size: 0.9rem; color: #d9d2f2; max-width: 34em; }
-      .form-status { font-size: 0.96rem; font-weight: 700; color: var(--butter); min-height: 1.4em; margin-top: 8px; }
+      .form-note { font-size: 0.9rem; color: var(--muted); max-width: 34em; }
+      .form-status { font-size: 0.96rem; font-weight: 700; color: var(--coral-hover); min-height: 1.4em; margin-top: 8px; }
 
-      footer { padding: 36px 0 48px; margin-top: 44px; border-top: 2px dotted var(--line); text-align: center; }
-      footer p { color: var(--muted); font-size: 0.97rem; }
-      footer p + p { margin-top: 6px; }
+      footer { padding: 36px 0 48px; margin-top: 40px; border-top: 1px solid var(--line); text-align: center; }
+      footer p { color: var(--body); font-size: 0.97rem; max-width: 46em; margin-left: auto; margin-right: auto; }
+      footer p + p { margin-top: 8px; }
       footer a { font-weight: 800; white-space: nowrap; }
 
       /* ---------- Mobile ---------- */
       @media (max-width: 760px) {
         body { font-size: 16px; }
-        .hero { padding-top: 32px; }
+        .hero { padding-top: 30px; }
+        /* Stack: Headline → Illustration → Subheadline & CTAs → Details Strip */
+        .hero-grid {
+          grid-template-columns: 1fr;
+          grid-template-areas:
+            "head"
+            "art"
+            "body";
+          row-gap: 20px;
+        }
+        .hero-art { align-self: auto; }
         .fact-strip { grid-template-columns: 1fr 1fr; }
-        .build-grid, .form-grid { grid-template-columns: 1fr; }
-        .agenda-item { grid-template-columns: 1fr; gap: 8px; }
+        .fact:nth-child(3) { border-left: none; }
+        .fact:nth-child(n+3) { border-top: 1px solid var(--line); }
+        .room-grid, .trust-grid, .form-grid { grid-template-columns: 1fr; }
+        .agenda-item { grid-template-columns: 1fr; gap: 6px; }
         .agenda-time { justify-self: start; }
-        .agenda-band, .interest-band { padding: 24px 18px; }
+        .agenda-band, .interest-card { padding: 22px 18px; }
       }
     </style>
   </head>
@@ -221,65 +221,74 @@
 
       <!-- ================= 1. HERO ================= -->
       <div class="hero">
-        <div class="sign" role="img" aria-label="Main Street AI · [Town Name]">
-          <div class="sign-name">Main Street <span class="ai">AI</span></div>
-          <div class="sign-tag">[Town Name]</div>
+        <div class="hero-grid">
+          <div class="hero-head">
+            <span class="eyebrow">Main Street AI · [Town Name]</span>
+            <h1>Practical AI for the people who keep this town running.</h1>
+          </div>
+          <div class="hero-art">
+            <div class="toon-frame">
+              <img src="images/workshop-tables.webp" loading="eager" alt="Cartoon illustration of a pastel Main Street with a CPA tax office, a small law office, an insurance brokerage, a cafe, a senior center, a childcare center, and a public library. Diverse townspeople smile on the sidewalk with laptops, tablets, and notebooks while kids play soccer in the park behind the shops." />
+            </div>
+          </div>
+          <div class="hero-body">
+            <p class="lede">
+              A free, hands-on, two-hour workshop for local businesses, professionals, and nonprofits.
+              Bring a real task from your week&mdash;leave with a working shortcut you can use tomorrow.
+            </p>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#interest">Save a Spot</a>
+              <a class="btn btn-outline" href="#agenda">See the Agenda</a>
+            </div>
+            <p class="trust-line">No tech background needed. No sales pitches.</p>
+          </div>
         </div>
-        <h1>Practical AI for the people who keep this town running.</h1>
-        <p class="lede">
-          A free, hands-on, two-hour workshop for local businesses, professionals, and nonprofits.
-          Bring a real task from your week&mdash;leave with a working shortcut you can use tomorrow.
-        </p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#interest">Save a Spot</a>
-          <a class="btn btn-ghost" href="#agenda">See the Agenda</a>
-        </div>
-        <p class="trust-line">No tech background needed. No sales pitches.</p>
 
         <div class="fact-strip" role="list" aria-label="Workshop facts">
-          <div class="fact f1" role="listitem">
+          <div class="fact" role="listitem">
             <div class="f-label">Format</div>
             <div class="f-value">2 hours, hands-on (bring a laptop)</div>
           </div>
-          <div class="fact f2" role="listitem">
+          <div class="fact" role="listitem">
             <div class="f-label">Where</div>
-            <div class="f-value">[Local Library / Community Center]</div>
+            <div class="f-value">Local library or community center</div>
           </div>
-          <div class="fact f3" role="listitem">
+          <div class="fact" role="listitem">
             <div class="f-label">When</div>
-            <div class="f-value">First session forming &middot; [Month]</div>
+            <div class="f-value">First session forming</div>
           </div>
-          <div class="fact f4" role="listitem">
+          <div class="fact" role="listitem">
             <div class="f-label">Cost</div>
-            <div class="f-value">Free</div>
+            <div class="f-value">Free for participants</div>
           </div>
-        </div>
-
-        <div class="toon-frame">
-          <img src="images/main-street-hero.webp" loading="eager" alt="Cartoon illustration of a pastel Main Street with a CPA tax office, a small law office, an insurance brokerage, a cafe, a senior center, a childcare center, and a public library. Diverse townspeople smile on the sidewalk with laptops, tablets, and notebooks while kids play soccer in the park behind the shops." />
         </div>
       </div>
 
-      <!-- ================= 2. WHO IT'S FOR ================= -->
+      <!-- ================= 2. WHO IS IN THE ROOM ================= -->
       <section id="who">
         <div class="sec-head">
-          <h2>Built for real weekly work</h2>
+          <h2>Who is in the room</h2>
         </div>
-        <div class="build-grid">
-          <article class="build-card b-lav">
-            <h3>Local Pros</h3>
-            <p class="who">CPAs &middot; Advisors &middot; Attorneys</p>
-            <p class="body">Turn dense updates into plain-English client emails and meeting checklists.</p>
+        <div class="room-grid">
+          <article class="room-card">
+            <h3>Professional services</h3>
+            <p class="who">CPAs &middot; Attorneys &middot; Insurance brokers &middot; Advisors</p>
+            <p class="body">Turn dense tax and legal updates into plain-English client emails and meeting checklists.</p>
           </article>
-          <article class="build-card b-mint">
-            <h3>Senior &amp; Community Orgs</h3>
+          <article class="room-card">
+            <h3>Local business owners</h3>
+            <p class="who">Shops &middot; Restaurants &middot; Trades &middot; Solo operators</p>
+            <p class="body">Speed up customer follow-ups, staff notes, and everyday marketing copy.</p>
+          </article>
+          <article class="room-card">
+            <h3>Senior services</h3>
             <p class="who">In-home care &middot; Senior centers &middot; Nonprofits</p>
             <p class="body">Draft clear family guides, intake summaries, and newsletters in minutes.</p>
           </article>
-          <article class="build-card b-peach">
-            <h3>Small Businesses</h3>
-            <p class="who">Shops &middot; Restaurants &middot; Trades &middot; Solo operators</p>
-            <p class="body">Speed up customer follow-ups, staff SOPs, and local marketing copy.</p>
+          <article class="room-card">
+            <h3>Family and community</h3>
+            <p class="who">Childcare centers &middot; Libraries &middot; Youth sports</p>
+            <p class="body">Plan schedules, write announcements, and organize sign-ups without the paperwork pile-up.</p>
           </article>
         </div>
       </section>
@@ -287,27 +296,38 @@
       <!-- ================= 3. AGENDA ================= -->
       <section id="agenda">
         <div class="agenda-band">
-          <h2>How we&rsquo;ll spend the two hours</h2>
+          <h2>How the two hours run</h2>
+          <p class="agenda-intro">Most of the session is hands-on work at your table, not slides.</p>
+          <div class="agenda-photo">
+            <img src="images/main-street-hero.webp" loading="lazy" alt="Cartoon illustration of neighbors working together at round workshop tables with laptops and notebooks, testing AI tools on real tasks from their week." />
+          </div>
           <ol class="agenda-list">
             <li class="agenda-item">
-              <div class="agenda-time">0:00 &ndash; 0:20</div>
+              <div class="agenda-time">0:00 &ndash; 0:15</div>
               <div>
-                <h3>Basics &amp; Privacy</h3>
-                <p>What AI does well, what it gets wrong, and how to keep client data safe.</p>
+                <h3>Welcome &amp; Basics</h3>
+                <p>What AI does well, in plain English.</p>
               </div>
             </li>
             <li class="agenda-item">
-              <div class="agenda-time">0:20 &ndash; 1:15</div>
+              <div class="agenda-time">0:15 &ndash; 0:35</div>
+              <div>
+                <h3>Privacy Ground Rules</h3>
+                <p>How to keep client and customer data safe.</p>
+              </div>
+            </li>
+            <li class="agenda-item">
+              <div class="agenda-time">0:35 &ndash; 1:15</div>
               <div>
                 <h3>Hands-On Table Work</h3>
-                <p>Sit with peers in similar work and test free AI tools on a real task.</p>
+                <p>Test free AI tools on a real task with peers in similar work.</p>
               </div>
             </li>
             <li class="agenda-item">
               <div class="agenda-time">1:15 &ndash; 1:45</div>
               <div>
                 <h3>Build Your Shortcut</h3>
-                <p>Save a reusable prompt or workflow you can run tomorrow morning.</p>
+                <p>Save a reusable prompt or workflow for tomorrow morning.</p>
               </div>
             </li>
             <li class="agenda-item">
@@ -321,8 +341,29 @@
         </div>
       </section>
 
-      <!-- ================= 4. SIGNUP + FOOTER ================= -->
-      <div class="interest-band" id="interest">
+      <!-- ================= 4. DOING THIS RESPONSIBLY ================= -->
+      <section id="responsibly">
+        <div class="sec-head">
+          <h2>Doing this responsibly</h2>
+        </div>
+        <div class="trust-grid">
+          <article class="trust-card">
+            <h3>Keep private data out</h3>
+            <p>Never paste client names, account numbers, or health details. We show you how to strip them out first.</p>
+          </article>
+          <article class="trust-card">
+            <h3>A human checks everything</h3>
+            <p>AI drafts, you decide. Every email, guide, and post gets your eyes before it goes out.</p>
+          </article>
+          <article class="trust-card">
+            <h3>Know the limits</h3>
+            <p>These tools can sound sure and still be wrong. We flag what to double-check every time.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================= 5. SIGNUP + FOOTER ================= -->
+      <div class="interest-card" id="interest">
         <h2>Save a spot</h2>
         <p>Capped at 25 seats so everyone gets hands-on help. Free tools only&mdash;no paid accounts needed.</p>
         <form id="interest-form" novalidate>
@@ -341,7 +382,7 @@
             </div>
           </div>
           <div class="form-actions">
-            <button class="btn btn-butter" type="submit">Count Me In</button>
+            <button class="btn btn-primary" type="submit">Count Me In</button>
             <p class="form-note">Opens your email app with everything filled in, addressed to the host.</p>
           </div>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
@@ -349,8 +390,8 @@
       </div>
 
       <footer>
-        <p>Hosted by [Your Name], a local neighbor.</p>
-        <p>Want to co-host for your Chamber, library, or group? <a href="mailto:[your-email@example.com]">Email me &rarr;</a></p>
+        <p>Hosted by Eric Ullrich, a local neighbor who built his own small business with these same tools and wants to share what works.</p>
+        <p>Want to co-host for your Chamber, library, or local group? <a href="mailto:eric@candor.financial">Get in touch &rarr;</a></p>
       </footer>
 
     </main>
