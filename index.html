@@ -143,19 +143,20 @@
         background: var(--surface); margin-bottom: 8px;
       }
       .agenda-photo img { width: 100%; height: auto; }
+      .agenda-group { margin-top: 26px; }
+      .agenda-group:first-of-type { margin-top: 20px; }
+      .agenda-group h3.agenda-group-title {
+        font-size: 1.28rem; font-weight: 700; color: var(--coral-hover); margin-bottom: 4px;
+      }
+      .agenda-group .agenda-group-intro { color: var(--body); margin-bottom: 6px; max-width: 44em; }
       .agenda-list { list-style: none; margin: 0; padding: 0; }
       .agenda-item {
-        display: grid; grid-template-columns: 118px 1fr; gap: 16px; align-items: baseline;
-        padding: 15px 0; border-top: 1px solid var(--line);
-      }
-      .agenda-time {
-        font-family: "Baloo 2", sans-serif; font-weight: 700; font-size: 0.95rem; white-space: nowrap;
-        background: var(--surface); border: 1px solid var(--line); border-radius: 999px;
-        padding: 3px 12px; text-align: center; color: var(--ink);
+        padding: 12px 0; border-top: 1px solid var(--line);
       }
       .agenda-item h3 { font-size: 1.08rem; font-weight: 700; display: inline; }
       .agenda-item p { color: var(--body); font-size: 0.98rem; display: inline; }
-      .agenda-item p::before { content: " — "; color: var(--muted); }
+      .agenda-item p::before { content: ": "; color: var(--muted); }
+      .agenda-band { padding-bottom: 22px; }
 
       /* Interest form: clean white card */
       .interest-card {
@@ -210,8 +211,6 @@
         .fact:nth-child(3) { border-left: none; }
         .fact:nth-child(n+3) { border-top: 1px solid var(--line); }
         .room-grid, .form-grid, .partner-grid { grid-template-columns: 1fr; }
-        .agenda-item { grid-template-columns: 1fr; gap: 6px; }
-        .agenda-time { justify-self: start; }
         .agenda-band, .interest-card { padding: 22px 18px; }
       }
     </style>
@@ -301,43 +300,60 @@
           <div class="agenda-photo">
             <img src="images/workshop-tables.webp" loading="lazy" alt="Cartoon illustration of neighbors working together at round workshop tables with laptops and notebooks, testing AI tools on real tasks from their week." />
           </div>
-          <ol class="agenda-list">
-            <li class="agenda-item">
-              <div class="agenda-time">0:00 &ndash; 0:15</div>
-              <div>
-                <h3>Welcome &amp; Basics</h3>
-                <p>What AI does well, in plain English.</p>
-              </div>
-            </li>
-            <li class="agenda-item">
-              <div class="agenda-time">0:15 &ndash; 0:35</div>
-              <div>
-                <h3>Privacy Ground Rules</h3>
-                <p>How to keep client and customer data safe.</p>
-              </div>
-            </li>
-            <li class="agenda-item">
-              <div class="agenda-time">0:35 &ndash; 1:15</div>
-              <div>
-                <h3>Hands-On Table Work</h3>
-                <p>Test free AI tools on a real task with peers in similar work.</p>
-              </div>
-            </li>
-            <li class="agenda-item">
-              <div class="agenda-time">1:15 &ndash; 1:45</div>
-              <div>
-                <h3>Build Your Shortcut</h3>
-                <p>Save a reusable prompt or workflow for tomorrow morning.</p>
-              </div>
-            </li>
-            <li class="agenda-item">
-              <div class="agenda-time">1:45 &ndash; 2:00</div>
-              <div>
-                <h3>Quick Show &amp; Tell</h3>
-                <p>2-minute shares so everyone leaves with extra ideas.</p>
-              </div>
-            </li>
-          </ol>
+          <div class="agenda-group">
+            <h3 class="agenda-group-title">First, see what is possible</h3>
+            <p class="agenda-group-intro">Real life transformations of small business operations, with a concrete example for each area.</p>
+            <ul class="agenda-list">
+              <li class="agenda-item">
+                <h3>Marketing</h3>
+                <p>a week of social posts and customer emails drafted in one sitting.</p>
+              </li>
+              <li class="agenda-item">
+                <h3>Finance</h3>
+                <p>invoices, receipts, and cash flow summaries prepared automatically.</p>
+              </li>
+              <li class="agenda-item">
+                <h3>Admin</h3>
+                <p>scheduling, intake forms, and follow-up handled without the paper chase.</p>
+              </li>
+              <li class="agenda-item">
+                <h3>Operations</h3>
+                <p>checklists and hand-offs that keep the whole team in sync.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="agenda-group">
+            <h3 class="agenda-group-title">Then, the workshop</h3>
+            <ul class="agenda-list">
+              <li class="agenda-item">
+                <h3>Pain point identification</h3>
+                <p>name the task that eats your week.</p>
+              </li>
+              <li class="agenda-item">
+                <h3>Ideation and system possibilities</h3>
+                <p>map what AI could take off your plate.</p>
+              </li>
+              <li class="agenda-item">
+                <h3>Honing projects</h3>
+                <p>leave with one working project, built on your own laptop.</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="agenda-group">
+            <h3 class="agenda-group-title">Tactics for working with AI</h3>
+            <ul class="agenda-list">
+              <li class="agenda-item">
+                <h3>Prompting</h3>
+                <p>how to ask so you get usable results the first time.</p>
+              </li>
+              <li class="agenda-item">
+                <h3>Tool connectors</h3>
+                <p>connect AI to the tools you already use, like email, calendars, and spreadsheets.</p>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 
