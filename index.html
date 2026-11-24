@@ -68,17 +68,17 @@
       .hero { padding: 44px 0 8px; }
       .hero-grid {
         display: grid;
-        grid-template-columns: 45fr 55fr;
+        grid-template-columns: 1fr;
         grid-template-areas:
-          "head art"
-          "body art";
-        column-gap: 36px;
+          "head"
+          "body"
+          "art";
         row-gap: 0;
         align-items: start;
       }
       .hero-head { grid-area: head; }
       .hero-body { grid-area: body; }
-      .hero-art { grid-area: art; align-self: center; }
+      .hero-art { grid-area: art; margin-top: 20px; }
 
       .eyebrow {
         display: inline-block;
@@ -88,9 +88,9 @@
       }
       .hero h1 {
         font-size: clamp(2rem, 4.6vw, 2.9rem); font-weight: 800;
-        margin-bottom: 16px; max-width: 14em;
+        margin-bottom: 8px; max-width: none;
       }
-      .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0 12px; }
+      .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 16px 0 4px; }
 
       .toon-frame {
         border: 1px solid var(--line); border-radius: 20px; overflow: hidden;
@@ -212,7 +212,7 @@
       @media (max-width: 760px) {
         body { font-size: 16px; }
         .hero { padding-top: 30px; }
-        /* Stack: Headline → Illustration → Subheadline & CTAs → Details Strip */
+        /* Stack: Headline → Illustration → CTAs → Details Strip */
         .hero-grid {
           grid-template-columns: 1fr;
           grid-template-areas:
@@ -221,7 +221,8 @@
             "body";
           row-gap: 20px;
         }
-        .hero-art { align-self: auto; }
+        .hero-art { margin-top: 0; }
+        .cta-row { margin: 0; }
         .fact-strip { grid-template-columns: 1fr 1fr; }
         .fact:nth-child(3) { border-left: none; }
         .fact:nth-child(n+3) { border-top: 1px solid var(--line); }
