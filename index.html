@@ -11,6 +11,56 @@
     <meta property="og:title" content="Main Street AI · [Town Name]" />
     <meta property="og:description" content="A free, hands-on, two-hour workshop for local businesses, professionals, and nonprofits." />
     <meta property="og:image" content="images/main-street-hero.webp" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://eullrich.github.io/main-street-ai/#org",
+          "name": "Main Street AI",
+          "url": "https://eullrich.github.io/main-street-ai/",
+          "description": "Free, hands-on AI help for local small businesses, through a two-hour community workshop and one-on-one support.",
+          "email": "eric@candor.financial",
+          "founder": { "@id": "https://eullrich.github.io/main-street-ai/#eric" }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://eullrich.github.io/main-street-ai/#eric",
+          "name": "Eric Ullrich",
+          "jobTitle": "Host, Main Street AI",
+          "description": "Founder of Candor Medicare in San Rafael, California, which he built and runs on AI systems he built himself. Before that, co-founder of Hacker Lab in Sacramento, a community makerspace and coworking space he helped run for nearly ten years.",
+          "email": "eric@candor.financial"
+        },
+        {
+          "@type": "EducationEvent",
+          "name": "Main Street AI workshop",
+          "description": "A free, hands-on, two-hour workshop where local business owners, professionals, and community organizations work on real tasks from their own week with AI tools, and leave with working shortcuts they can use the next day.",
+          "url": "https://eullrich.github.io/main-street-ai/",
+          "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+          "isAccessibleForFree": true,
+          "duration": "PT2H",
+          "location": {
+            "@type": "Place",
+            "name": "Local library or community center"
+          },
+          "organizer": { "@id": "https://eullrich.github.io/main-street-ai/#org" },
+          "instructor": { "@id": "https://eullrich.github.io/main-street-ai/#eric" },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://eullrich.github.io/main-street-ai/#interest"
+          },
+          "audience": {
+            "@type": "Audience",
+            "audienceType": "Local small business owners, independent professionals, nonprofits, and community organizations"
+          }
+        }
+      ]
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />

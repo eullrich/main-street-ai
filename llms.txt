@@ -1,0 +1,25 @@
+# Main Street AI
+
+> Free, hands-on AI help for local small businesses. Main Street AI is a free two-hour community workshop, hosted by Eric Ullrich, where owners work on real tasks from their own week alongside a local expert and leave with working shortcuts they can use the next day.
+
+## Key facts
+
+- Cost: free for participants
+- Format: one two-hour, hands-on workshop session, in person, first session now forming
+- Location: a local library or community center
+- Host: Eric Ullrich, founder of Candor Medicare (San Rafael, California), who built and runs that business on AI systems he built himself. Before Candor, he co-founded Hacker Lab in Sacramento and helped run it for nearly ten years.
+- Who it is for: independently owned local businesses and community organizations, including CPAs, lawyers, insurance brokers, retail and service business owners, in-home care and senior centers, childcare centers, libraries, and youth sports organizers
+- What happens: participants see real small business AI transformations (marketing, finance, admin, operations), then work on their own projects, identifying pain points, exploring what AI could take off their plate, and honing one project, with tactics for prompting and connecting tools
+- What participants get: ideas and possibilities, actionable implementation tips, AI automation best practices, agent swarms and OpenClaw, and prompting skills
+- Two ways to take part: attend the workshop, or host or co-host a session for your own business community
+- Sign up: use the interest form on the homepage (see below)
+
+## Links
+
+- [Main Street AI homepage](https://eullrich.github.io/main-street-ai/): full details, agenda, host bio, and the sign-up form
+- [Sign up for a spot](https://eullrich.github.io/main-street-ai/#interest): the interest form on the homepage
+- [OpenAI OpenWorks](https://openai.com/openworks/): the OpenAI program that funds local partners to give small businesses free, hands-on AI help
+
+## Contact
+
+- Email: eric@candor.financial
