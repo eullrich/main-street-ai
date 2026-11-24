@@ -61,14 +61,14 @@
       @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
       .btn-primary { background: var(--coral); color: #fff; border: 2px solid var(--coral); }
       .btn-primary:hover { background: var(--coral-hover); border-color: var(--coral-hover); }
-      .btn-outline { background: transparent; color: var(--ink); border: 2px solid var(--ink); }
-      .btn-outline:hover { background: var(--ink); color: #fff; }
+      .btn-outline { background: transparent; color: var(--ink); border: 2px solid #CBD5E1; }
+      .btn-outline:hover { background: #F8FAFC; color: var(--ink); border-color: #94A3B8; }
 
       /* ---------- Hero ---------- */
       .hero { padding: 44px 0 8px; }
       .hero-grid {
         display: grid;
-        grid-template-columns: 1.02fr 0.98fr;
+        grid-template-columns: 45fr 55fr;
         grid-template-areas:
           "head art"
           "body art";
@@ -114,6 +114,24 @@
       .fact + .fact { border-left: 1px solid var(--line); }
       .fact .f-label { font-size: 0.76rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
       .fact .f-value { font-weight: 700; font-size: 0.97rem; margin-top: 3px; line-height: 1.4; color: var(--ink); }
+
+      /* Value strip: compact 3-column strip under the details bar */
+      .value-section { padding: 28px 0 4px; }
+      .value-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .value-item {
+        display: flex; gap: 14px; align-items: flex-start;
+        background: var(--surface); border: 1px solid var(--line);
+        border-radius: var(--radius); padding: 18px 20px; box-shadow: var(--shadow);
+      }
+      .value-icon {
+        flex: 0 0 auto; width: 42px; height: 42px;
+        display: inline-flex; align-items: center; justify-content: center;
+        background: var(--sand); border: 1px solid var(--line); border-radius: 12px;
+        color: var(--coral-hover);
+      }
+      .value-icon svg { width: 22px; height: 22px; }
+      .value-item h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 3px; }
+      .value-item p { color: var(--body); font-size: 0.95rem; line-height: 1.5; }
 
       /* ---------- Sections ---------- */
       section { padding: 48px 0 4px; }
@@ -209,7 +227,7 @@
         .fact-strip { grid-template-columns: 1fr 1fr; }
         .fact:nth-child(3) { border-left: none; }
         .fact:nth-child(n+3) { border-top: 1px solid var(--line); }
-        .room-grid, .form-grid, .partner-grid { grid-template-columns: 1fr; }
+        .room-grid, .form-grid, .partner-grid, .value-grid { grid-template-columns: 1fr; }
         .agenda-item { grid-template-columns: 1fr; gap: 6px; }
         .agenda-time { justify-self: start; }
         .agenda-band, .interest-card { padding: 22px 18px; }
@@ -264,28 +282,35 @@
         </div>
       </div>
 
-      <!-- ================= 2. IN PARTNERSHIP ================= -->
-      <section id="partnership">
-        <div class="sec-head">
-          <h2>In partnership</h2>
-          <p>This workshop is designed to run in partnership with the local organizations that already support small businesses every day.</p>
-        </div>
-        <div class="partner-grid">
-          <article class="partner-card">
-            <h3>Chamber of Commerce</h3>
-            <p>Reaches local business owners and helps spread the word through a trusted network.</p>
+      <!-- ================= 2. VALUE STRIP ================= -->
+      <section class="value-section" aria-label="What you get from the workshop">
+        <div class="value-grid">
+          <article class="value-item">
+            <span class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </span>
+            <div>
+              <h3>1 Working Shortcut</h3>
+              <p>Build something on your own laptop for a real weekly task.</p>
+            </div>
           </article>
-          <article class="partner-card">
-            <h3>City Business Development Department</h3>
-            <p>Connects small businesses across town and links them to city resources and support.</p>
+          <article class="value-item">
+            <span class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </span>
+            <div>
+              <h3>Zero Tech Jargon</h3>
+              <p>Plain-English guidance alongside peers in your field.</p>
+            </div>
           </article>
-          <article class="partner-card">
-            <h3>County Business Development Department</h3>
-            <p>Brings regional reach and resources for businesses beyond a single town.</p>
-          </article>
-          <article class="partner-card">
-            <h3>Community College</h3>
-            <p>Offers a welcoming classroom venue, lifelong learning students, and workforce training connections.</p>
+          <article class="value-item">
+            <span class="value-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+            </span>
+            <div>
+              <h3>Privacy First</h3>
+              <p>Simple rules to keep sensitive client and family data safe.</p>
+            </div>
           </article>
         </div>
       </section>
@@ -367,7 +392,33 @@
         </div>
       </section>
 
-      <!-- ================= 5. SIGNUP + FOOTER ================= -->
+      <!-- ================= 5. IN PARTNERSHIP ================= -->
+      <section id="partnership">
+        <div class="sec-head">
+          <h2>In partnership</h2>
+          <p>This workshop is designed to run in partnership with the local organizations that already support small businesses every day.</p>
+        </div>
+        <div class="partner-grid">
+          <article class="partner-card">
+            <h3>Chamber of Commerce</h3>
+            <p>Reaches local business owners and helps spread the word through a trusted network.</p>
+          </article>
+          <article class="partner-card">
+            <h3>City Business Development Department</h3>
+            <p>Connects small businesses across town and links them to city resources and support.</p>
+          </article>
+          <article class="partner-card">
+            <h3>County Business Development Department</h3>
+            <p>Brings regional reach and resources for businesses beyond a single town.</p>
+          </article>
+          <article class="partner-card">
+            <h3>Community College</h3>
+            <p>Offers a welcoming classroom venue, lifelong learning students, and workforce training connections.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ================= 6. SIGNUP + FOOTER ================= -->
       <div class="interest-card" id="interest">
         <h2>Save a spot</h2>
         <p>Capped at 25 seats so everyone gets hands-on help. Free tools only&mdash;no paid accounts needed.</p>
