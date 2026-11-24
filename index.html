@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="color-scheme" content="light dark" />
     <link rel="icon" href="data:," />
-    <title>Main Street AI · [Town Name], learning together</title>
-    <meta name="description" content="A free, hands-on, two-hour workshop for local professionals, small business owners, and the organizations that serve our neighbors. No tech background needed." />
+    <title>Main Street AI · [Town Name]</title>
+    <meta name="description" content="A free, hands-on, two-hour workshop for local businesses, professionals, and nonprofits. Bring a real task from your week, leave with a working shortcut you can use tomorrow." />
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Main Street AI · [Town Name], learning together" />
-    <meta property="og:description" content="A free, hands-on, two-hour workshop for local professionals, small business owners, and the organizations that serve our neighbors. No tech background needed. Leave with one working shortcut you can use the next morning." />
+    <meta property="og:title" content="Main Street AI · [Town Name]" />
+    <meta property="og:description" content="A free, hands-on, two-hour workshop for local businesses, professionals, and nonprofits. Bring a real task from your week, leave with a working shortcut you can use tomorrow." />
     <meta property="og:image" content="images/main-street-hero.webp" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,14 +19,12 @@
 
       :root {
         --bg: #eef7fc;
-        --bg-soft: #fdf3e3;
         --surface: #ffffff;
         --ink: #3b3455;
         --muted: #6a6285;
         --line: #ddd6ee;
         --coral: #e2604d;
         --coral-deep: #c94c3a;
-        --sky: #7cc3e8;
         --sky-soft: #dff1fb;
         --mint: #8fd6b4;
         --mint-soft: #e2f5ea;
@@ -35,7 +33,6 @@
         --butter: #ffd968;
         --butter-soft: #fff3cf;
         --lav: #b9a7e6;
-        --lav-soft: #efe9fb;
         --band: #453a68;
         --band-ink: #f6f2ff;
         --shadow: 0 12px 28px rgba(59, 52, 85, 0.13);
@@ -44,25 +41,17 @@
       @media (prefers-color-scheme: dark) {
         :root {
           --bg: #232038;
-          --bg-soft: #2a2440;
           --surface: #2f2a4a;
           --ink: #f2eefc;
           --muted: #c2badd;
           --line: #4c4470;
           --coral: #ff8a76;
           --coral-deep: #ffa08e;
-          --sky: #7cc3e8;
           --sky-soft: #2c3a55;
-          --mint: #8fd6b4;
           --mint-soft: #27443a;
-          --peach: #ffb08a;
           --peach-soft: #4a3428;
-          --butter: #ffd968;
           --butter-soft: #4a3f22;
-          --lav: #b9a7e6;
-          --lav-soft: #3a3160;
           --band: #17142a;
-          --band-ink: #f6f2ff;
           --shadow: 0 12px 28px rgba(0, 0, 0, 0.45);
         }
       }
@@ -111,9 +100,8 @@
         margin: 30px auto 14px; max-width: 20em;
       }
       .hero .lede { font-size: 1.13rem; color: var(--muted); max-width: 42em; margin: 0 auto; }
-      .hero .lede strong { color: var(--ink); }
       .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin: 26px 0 10px; justify-content: center; }
-      .trust-line { font-size: 0.95rem; font-weight: 600; color: var(--muted); max-width: 40em; margin: 0 auto 26px; }
+      .trust-line { font-size: 0.95rem; font-weight: 600; color: var(--muted); margin: 0 auto 26px; }
       .btn {
         display: inline-flex; align-items: center; justify-content: center;
         min-height: 50px; padding: 12px 26px; border-radius: 999px;
@@ -146,55 +134,36 @@
         box-shadow: var(--shadow); background: var(--surface);
       }
       .toon-frame img { width: 100%; height: auto; }
-      .photo-credit { font-size: 0.92rem; color: var(--muted); margin-top: 12px; font-weight: 600; }
-
-      .bunting { display: block; width: 100%; height: 34px; margin: 26px 0 0; }
 
       /* ---------- Sections ---------- */
       section { padding: 52px 0 4px; }
       .sec-head { max-width: 44em; margin-bottom: 28px; }
-      .sec-head h2 { font-size: clamp(1.8rem, 4.4vw, 2.5rem); font-weight: 700; margin-bottom: 10px; }
-      .sec-head p { color: var(--muted); font-size: 1.05rem; }
+      .sec-head h2 { font-size: clamp(1.8rem, 4.4vw, 2.5rem); font-weight: 700; }
 
-      /* Who is in the room */
-      .room-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-      .room-card {
+      /* Who it's for */
+      .build-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+      .build-card {
         background: var(--surface); border: 2px solid var(--line);
-        border-radius: var(--radius); padding: 24px 24px 18px; overflow: hidden; position: relative;
+        border-radius: var(--radius); padding: 24px 22px 20px; overflow: hidden; position: relative;
       }
-      .room-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 10px; }
-      .room-card.c-lav::before { background: var(--lav); }
-      .room-card.c-peach::before { background: var(--peach); }
-      .room-card.c-mint::before { background: var(--mint); }
-      .room-card.c-butter::before { background: var(--butter); }
-      .room-card h3 { font-size: 1.35rem; font-weight: 700; margin: 6px 0 4px; }
-      .room-card .who { font-weight: 800; font-size: 0.94rem; margin-bottom: 12px; }
-      .c-lav .who { color: #7a5fc0; } .c-peach .who { color: #d96f36; }
-      .c-mint .who { color: #2f8f5f; } .c-butter .who { color: #a97e10; }
+      .build-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 10px; }
+      .build-card.b-lav::before { background: var(--lav); }
+      .build-card.b-mint::before { background: var(--mint); }
+      .build-card.b-peach::before { background: var(--peach); }
+      .build-card h3 { font-size: 1.28rem; font-weight: 700; margin: 6px 0 4px; }
+      .build-card .who { font-weight: 800; font-size: 0.92rem; margin-bottom: 10px; }
+      .b-lav .who { color: #7a5fc0; } .b-mint .who { color: #2f8f5f; } .b-peach .who { color: #d96f36; }
       @media (prefers-color-scheme: dark) {
-        .c-lav .who { color: var(--lav); } .c-peach .who { color: var(--peach); }
-        .c-mint .who { color: var(--mint); } .c-butter .who { color: var(--butter); }
+        .b-lav .who { color: var(--lav); } .b-mint .who { color: var(--mint); } .b-peach .who { color: var(--peach); }
       }
-      .room-card ul { margin: 0; padding: 0; list-style: none; }
-      .room-card li { padding: 8px 0 8px 24px; position: relative; color: var(--muted); font-size: 0.98rem; border-top: 2px dotted var(--line); }
-      .room-card li:first-child { border-top: none; }
-      .room-card li::before {
-        content: ""; position: absolute; left: 3px; top: 16px;
-        width: 9px; height: 9px; border-radius: 50%;
-      }
-      .c-lav li::before { background: var(--lav); } .c-peach li::before { background: var(--peach); }
-      .c-mint li::before { background: var(--mint); } .c-butter li::before { background: var(--butter); }
-      .room-card li strong { color: var(--ink); }
+      .build-card p.body { color: var(--muted); font-size: 0.98rem; }
 
       /* Agenda */
       .agenda-band {
         background: var(--butter-soft); border: 2.5px solid var(--ink);
         border-radius: 26px; padding: 30px 30px 12px; box-shadow: var(--shadow);
       }
-      .agenda-band .band-photo { border-radius: 18px; overflow: hidden; border: 2.5px solid var(--ink); margin-bottom: 24px; }
-      .agenda-band .band-photo img { width: 100%; height: auto; aspect-ratio: 21 / 9; object-fit: cover; object-position: center 30%; }
       .agenda-band h2 { font-size: clamp(1.8rem, 4.4vw, 2.5rem); font-weight: 700; margin-bottom: 8px; }
-      .agenda-band .sub { color: var(--muted); max-width: 42em; margin-bottom: 8px; }
       .agenda-list { list-style: none; margin: 0; padding: 0; }
       .agenda-item {
         display: grid; grid-template-columns: 122px 1fr; gap: 18px;
@@ -209,44 +178,6 @@
       .agenda-item h3 { font-size: 1.12rem; font-weight: 700; margin-bottom: 3px; }
       .agenda-item p { color: var(--muted); font-size: 0.98rem; max-width: 46em; }
 
-      /* Takeaways */
-      .take-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-      .take {
-        background: var(--surface); border: 2px solid var(--line);
-        border-radius: var(--radius); padding: 22px 20px;
-      }
-      .take .take-badge {
-        display: inline-flex; width: 42px; height: 42px; border-radius: 50%;
-        align-items: center; justify-content: center; margin-bottom: 12px;
-        border: 2px solid var(--ink);
-      }
-      .take .take-badge svg { width: 22px; height: 22px; }
-      .take.t1 .take-badge { background: var(--mint-soft); }
-      .take.t2 .take-badge { background: var(--sky-soft); }
-      .take.t3 .take-badge { background: var(--peach-soft); }
-      .take h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; }
-      .take p { color: var(--muted); font-size: 0.96rem; }
-
-      /* Setting */
-      .setting { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; }
-      .setting .toon-frame img { aspect-ratio: 3 / 2; object-fit: cover; }
-      .setting h2 { font-size: clamp(1.8rem, 4.4vw, 2.5rem); font-weight: 700; margin-bottom: 12px; }
-      .setting p { color: var(--muted); margin-bottom: 14px; }
-      .setting p strong { color: var(--ink); }
-      .status-note {
-        background: var(--lav-soft); border: 2px dashed var(--lav); border-radius: 16px;
-        padding: 15px 17px; font-size: 0.96rem; color: var(--ink);
-      }
-      .status-note strong { font-weight: 800; }
-
-      /* Responsible use */
-      .guard { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-      .guard > div {
-        background: var(--surface); border: 2px solid var(--line); border-radius: var(--radius); padding: 20px;
-      }
-      .guard h3 { font-size: 1.08rem; font-weight: 700; margin-bottom: 5px; }
-      .guard p { color: var(--muted); font-size: 0.95rem; }
-
       /* Interest form */
       .interest-band {
         background: var(--band); color: var(--band-ink); border: 3px solid var(--ink);
@@ -258,461 +189,168 @@
       .field { display: flex; flex-direction: column; gap: 6px; }
       .field.full { grid-column: 1 / -1; }
       .field label { font-size: 0.9rem; font-weight: 800; color: #efeaff; }
-      .field input, .field select, .field textarea {
+      .field input {
         font: inherit; font-size: 1rem; color: #3b3455;
         background: #ffffff; border: 2px solid #17142a; border-radius: 14px;
         padding: 10px 13px; width: 100%;
       }
-      .field textarea { min-height: 84px; resize: vertical; }
       .form-actions { margin-top: 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
       .btn-butter { background: var(--butter); color: #4a3803; }
       .form-note { font-size: 0.9rem; color: #d9d2f2; max-width: 34em; }
       .form-status { font-size: 0.96rem; font-weight: 700; color: var(--butter); min-height: 1.4em; margin-top: 8px; }
 
-      footer { padding: 42px 0 52px; margin-top: 56px; border-top: 2px dotted var(--line); }
-      footer .host { display: flex; gap: 16px; align-items: flex-start; max-width: 46em; }
-      footer .avatar {
-        flex: none; width: 50px; height: 50px; border-radius: 50%;
-        background: var(--coral); color: #fff; border: 2.5px solid var(--ink);
-        font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 1.05rem;
-        display: flex; align-items: center; justify-content: center;
-      }
-      @media (prefers-color-scheme: dark) { footer .avatar { color: #2a1408; } }
+      footer { padding: 36px 0 48px; margin-top: 44px; border-top: 2px dotted var(--line); text-align: center; }
       footer p { color: var(--muted); font-size: 0.97rem; }
-      footer p strong { color: var(--ink); }
-      footer .fine { margin-top: 22px; font-size: 0.88rem; font-weight: 700; }
-
-      /* Build cards (below hero) */
-      .build-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-      .build-card {
-        background: var(--surface); border: 2px solid var(--line);
-        border-radius: var(--radius); padding: 24px 22px 14px; overflow: hidden; position: relative;
-      }
-      .build-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 10px; }
-      .build-card.b-lav::before { background: var(--lav); }
-      .build-card.b-mint::before { background: var(--mint); }
-      .build-card.b-peach::before { background: var(--peach); }
-      .build-card h3 { font-size: 1.28rem; font-weight: 700; margin: 6px 0 4px; }
-      .build-card .who { font-weight: 800; font-size: 0.92rem; margin-bottom: 10px; }
-      .b-lav .who { color: #7a5fc0; } .b-mint .who { color: #2f8f5f; } .b-peach .who { color: #d96f36; }
-      @media (prefers-color-scheme: dark) {
-        .b-lav .who { color: var(--lav); } .b-mint .who { color: var(--mint); } .b-peach .who { color: var(--peach); }
-      }
-      .build-card .ex-label { font-size: 0.76rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
-      .build-card p.body { color: var(--muted); font-size: 0.98rem; }
-
-      /* Host bio */
-      .host-bio { display: grid; grid-template-columns: 150px 1fr; gap: 28px; align-items: center; }
-      .headshot-ph {
-        width: 150px; height: 150px; border-radius: 50%;
-        border: 3px dashed var(--lav); background: var(--lav-soft);
-        display: flex; align-items: center; justify-content: center; text-align: center;
-        font-family: "Baloo 2", sans-serif; font-weight: 700; font-size: 0.85rem; color: var(--muted);
-        padding: 14px;
-      }
-      .host-bio h2 { font-size: clamp(1.8rem, 4.4vw, 2.5rem); font-weight: 700; margin-bottom: 12px; }
-      .host-bio p { color: var(--muted); }
-      .host-bio p strong { color: var(--ink); }
-
-      /* FAQ */
-      .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-      .faq-grid details {
-        background: var(--surface); border: 2px solid var(--line); border-radius: var(--radius); padding: 6px 22px;
-      }
-      .faq-grid summary {
-        font-family: "Baloo 2", sans-serif; font-weight: 700; font-size: 1.08rem;
-        cursor: pointer; padding: 12px 0; color: var(--ink);
-      }
-      .faq-grid details p { color: var(--muted); font-size: 0.96rem; padding: 0 0 16px; }
-
-      /* Partner callout */
-      .partner-callout {
-        margin-top: 40px; background: var(--butter-soft); border: 2.5px dashed var(--ink);
-        border-radius: 20px; padding: 22px 26px; text-align: center;
-        font-size: 1.02rem; font-weight: 600;
-      }
-      .partner-callout a { font-weight: 800; white-space: nowrap; }
+      footer p + p { margin-top: 6px; }
+      footer a { font-weight: 800; white-space: nowrap; }
 
       /* ---------- Mobile ---------- */
       @media (max-width: 760px) {
         body { font-size: 16px; }
         .hero { padding-top: 32px; }
         .fact-strip { grid-template-columns: 1fr 1fr; }
-        .room-grid, .setting, .form-grid { grid-template-columns: 1fr; }
-        .take-grid, .guard, .build-grid, .faq-grid { grid-template-columns: 1fr; }
-        .host-bio { grid-template-columns: 1fr; justify-items: center; text-align: left; }
-        .host-bio > div:last-child { justify-self: stretch; }
+        .build-grid, .form-grid { grid-template-columns: 1fr; }
         .agenda-item { grid-template-columns: 1fr; gap: 8px; }
         .agenda-time { justify-self: start; }
         .agenda-band, .interest-band { padding: 24px 18px; }
-        .agenda-band .band-photo img { aspect-ratio: 4 / 3; }
       }
     </style>
   </head>
   <body>
     <main class="wrap">
 
-      <!-- ================= HERO ================= -->
+      <!-- ================= 1. HERO ================= -->
       <div class="hero">
-        <div class="sign" role="img" aria-label="Main Street AI, [Town Name], learning together">
+        <div class="sign" role="img" aria-label="Main Street AI · [Town Name]">
           <div class="sign-name">Main Street <span class="ai">AI</span></div>
-          <div class="sign-tag">[Town Name], learning together</div>
+          <div class="sign-tag">[Town Name]</div>
         </div>
         <h1>Practical AI for the people who keep this town running.</h1>
         <p class="lede">
-          A free, hands-on, two-hour workshop for local professionals, small business owners, and the
-          organizations that serve our neighbors. No tech background needed. Sit down with people who
-          do work like yours, try the tools on <strong>real tasks from your own week</strong>, and
-          leave with one working shortcut you can use the next morning.
+          A free, hands-on, two-hour workshop for local businesses, professionals, and nonprofits.
+          Bring a real task from your week&mdash;leave with a working shortcut you can use tomorrow.
         </p>
         <div class="cta-row">
           <a class="btn btn-primary" href="#interest">Save a Spot</a>
           <a class="btn btn-ghost" href="#agenda">See the Agenda</a>
         </div>
-        <p class="trust-line">Hosted by a local neighbor. No sponsors, no software pitches, just two hours of practical work.</p>
+        <p class="trust-line">No tech background needed. No sales pitches.</p>
 
         <div class="fact-strip" role="list" aria-label="Workshop facts">
           <div class="fact f1" role="listitem">
             <div class="f-label">Format</div>
-            <div class="f-value">2 hours, hands-on &middot; Bring a laptop (tablet or phone works too)</div>
+            <div class="f-value">2 hours, hands-on (bring a laptop)</div>
           </div>
           <div class="fact f2" role="listitem">
             <div class="f-label">Where</div>
-            <div class="f-value">[Local Library / Community Center Name]</div>
+            <div class="f-value">[Local Library / Community Center]</div>
           </div>
           <div class="fact f3" role="listitem">
             <div class="f-label">When</div>
-            <div class="f-value">First session forming &middot; [Target Month/Season]</div>
+            <div class="f-value">First session forming &middot; [Month]</div>
           </div>
           <div class="fact f4" role="listitem">
             <div class="f-label">Cost</div>
-            <div class="f-value">Free for participants</div>
+            <div class="f-value">Free</div>
           </div>
         </div>
 
         <div class="toon-frame">
           <img src="images/main-street-hero.webp" loading="eager" alt="Cartoon illustration of a pastel Main Street with a CPA tax office, a small law office, an insurance brokerage, a cafe, a senior center, a childcare center, and a public library. Diverse townspeople smile on the sidewalk with laptops, tablets, and notebooks while kids play soccer in the park behind the shops." />
         </div>
-        <p class="photo-credit">Every storefront on this street has a seat saved. Most of the two hours is spent trying things, with help nearby.</p>
-
-        <svg class="bunting" viewBox="0 0 1080 34" preserveAspectRatio="none" aria-hidden="true">
-          <path d="M0 2 Q 540 30 1080 2" fill="none" stroke="var(--muted)" stroke-width="2"/>
-          <polygon points="60,6 110,8 84,32" fill="var(--sky)"/>
-          <polygon points="180,10 230,11 204,34" fill="var(--peach)"/>
-          <polygon points="300,12 350,12 324,34" fill="var(--butter)"/>
-          <polygon points="420,13 470,12 444,34" fill="var(--lav)"/>
-          <polygon points="540,13 590,12 564,34" fill="var(--mint)"/>
-          <polygon points="660,12 710,11 684,33" fill="var(--peach)"/>
-          <polygon points="780,10 830,9 804,32" fill="var(--sky)"/>
-          <polygon points="900,8 950,6 924,30" fill="var(--butter)"/>
-          <polygon points="1000,5 1045,3 1022,26" fill="var(--lav)"/>
-        </svg>
       </div>
 
-      <!-- ================= WHAT YOU WILL BUILD ================= -->
-      <section id="build">
+      <!-- ================= 2. WHO IT'S FOR ================= -->
+      <section id="who">
         <div class="sec-head">
-          <h2>Real tasks from your actual week</h2>
-          <p>
-            You won&rsquo;t watch a slideshow about &ldquo;the future of AI.&rdquo; You&rsquo;ll pick a
-            real bottleneck from your desk and build a reusable shortcut.
-          </p>
+          <h2>Built for real weekly work</h2>
         </div>
         <div class="build-grid">
           <article class="build-card b-lav">
-            <h3>Local Professionals</h3>
+            <h3>Local Pros</h3>
             <p class="who">CPAs &middot; Advisors &middot; Attorneys</p>
-            <p class="ex-label">Example shortcuts</p>
-            <p class="body">Turning dense regulatory or tax updates into plain-English client emails, drafting meeting prep checklists, or summarizing long PDFs without losing key details.</p>
+            <p class="body">Turn dense updates into plain-English client emails and meeting checklists.</p>
           </article>
           <article class="build-card b-mint">
-            <h3>Senior Services &amp; Community Organizations</h3>
+            <h3>Senior &amp; Community Orgs</h3>
             <p class="who">In-home care &middot; Senior centers &middot; Nonprofits</p>
-            <p class="ex-label">Example shortcuts</p>
-            <p class="body">Creating clear, readable family guides, organizing intake notes, drafting grant or newsletter updates, and building simple FAQ sheets for clients and caregivers.</p>
+            <p class="body">Draft clear family guides, intake summaries, and newsletters in minutes.</p>
           </article>
           <article class="build-card b-peach">
-            <h3>Main Street Small Businesses</h3>
+            <h3>Small Businesses</h3>
             <p class="who">Shops &middot; Restaurants &middot; Trades &middot; Solo operators</p>
-            <p class="ex-label">Example shortcuts</p>
-            <p class="body">Writing customer follow-ups, turning messy notes into SOPs for staff, drafting local marketing copy, or organizing vendor and scheduling info.</p>
+            <p class="body">Speed up customer follow-ups, staff SOPs, and local marketing copy.</p>
           </article>
         </div>
       </section>
 
-      <!-- ================= WHO IS IN THE ROOM ================= -->
-      <section id="who">
-        <div class="sec-head">
-          <h2>Who is in the room</h2>
-          <p>
-            The mix is the point. A CPA, a care provider, and a youth league organizer all drown in
-            the same paperwork, and each group will hear how the others handle it. Here is what each
-            table will work on.
-          </p>
-        </div>
-
-        <div class="room-grid">
-          <article class="room-card c-lav">
-            <h3>Professional services</h3>
-            <p class="who">Independent CPAs &middot; Attorneys &middot; Insurance brokers</p>
-            <ul>
-              <li><strong>Client follow-up:</strong> first drafts of reminder emails, document requests, and appointment confirmations</li>
-              <li><strong>Long documents, short version:</strong> summaries of filings, policies, and plan documents you can check in minutes</li>
-              <li><strong>Client education:</strong> plain language explainers and handouts your clients actually read</li>
-            </ul>
-          </article>
-
-          <article class="room-card c-peach">
-            <h3>Local business owners</h3>
-            <p class="who">Shops &middot; Restaurants &middot; Trades &middot; Solo operators</p>
-            <ul>
-              <li><strong>Getting found:</strong> social posts, product and menu descriptions, and replies to customer reviews</li>
-              <li><strong>The inbox:</strong> faster answers to the questions customers ask every single week</li>
-              <li><strong>Back office:</strong> schedules, simple spreadsheets, and turning notes into invoices and lists</li>
-            </ul>
-          </article>
-
-          <article class="room-card c-mint">
-            <h3>Senior services</h3>
-            <p class="who">In-home care providers &middot; Senior community centers</p>
-            <ul>
-              <li><strong>Coordination:</strong> caregiver schedules, shift notes, and family update messages</li>
-              <li><strong>Programming:</strong> activity calendars, newsletters, and event flyers in a fraction of the time</li>
-              <li><strong>Intake:</strong> cleaner forms and follow-up lists so no referral falls through</li>
-            </ul>
-          </article>
-
-          <article class="room-card c-butter">
-            <h3>Family and community</h3>
-            <p class="who">Childcare centers &middot; Libraries &middot; Youth sports organizers</p>
-            <ul>
-              <li><strong>Parent communication:</strong> newsletters, enrollment emails, and last minute schedule changes</li>
-              <li><strong>Volunteer wrangling:</strong> sign-up messages, reminders, and thank-you notes for sponsors and helpers</li>
-              <li><strong>Programs:</strong> event descriptions, reading lists, and registration answers on demand</li>
-            </ul>
-          </article>
-        </div>
-      </section>
-
-      <!-- ================= AGENDA ================= -->
+      <!-- ================= 3. AGENDA ================= -->
       <section id="agenda">
         <div class="agenda-band">
-          <div class="band-photo">
-            <img src="images/workshop-tables.webp" alt="Cartoon illustration of a community workshop with diverse neighbors working in pairs at small round tables with laptops and tablets, pastel bunting overhead" />
-          </div>
           <h2>How we&rsquo;ll spend the two hours</h2>
-          <p class="sub">One short orientation, then hands-on work the rest of the way: about 75% of the session is you, at a table, working on your own material with guided help.</p>
           <ol class="agenda-list">
             <li class="agenda-item">
               <div class="agenda-time">0:00 &ndash; 0:20</div>
               <div>
-                <h3>Plain-English Orientation</h3>
-                <p>What these tools are actually good at, what they get wrong, and the simple privacy rules for keeping client and customer data safe.</p>
+                <h3>Basics &amp; Privacy</h3>
+                <p>What AI does well, what it gets wrong, and how to keep client data safe.</p>
               </div>
             </li>
             <li class="agenda-item">
               <div class="agenda-time">0:20 &ndash; 1:15</div>
               <div>
                 <h3>Hands-On Table Work</h3>
-                <p>Break into small tables with people in similar work. Pick one real task from your week and test prompts live with guided help.</p>
+                <p>Sit with peers in similar work and test free AI tools on a real task.</p>
               </div>
             </li>
             <li class="agenda-item">
               <div class="agenda-time">1:15 &ndash; 1:45</div>
               <div>
-                <h3>Build Your Take-Home Shortcut</h3>
-                <p>Refine your workflow into a saved prompt or template you can reuse tomorrow morning.</p>
+                <h3>Build Your Shortcut</h3>
+                <p>Save a reusable prompt or workflow you can run tomorrow morning.</p>
               </div>
             </li>
             <li class="agenda-item">
               <div class="agenda-time">1:45 &ndash; 2:00</div>
               <div>
-                <h3>Show &amp; Tell</h3>
-                <p>Quick 2-minute shares of the best shortcuts built in the room, so everyone leaves with extra ideas.</p>
+                <h3>Quick Show &amp; Tell</h3>
+                <p>2-minute shares so everyone leaves with extra ideas.</p>
               </div>
             </li>
           </ol>
         </div>
       </section>
 
-      <!-- ================= TAKEAWAYS ================= -->
-      <section id="takeaways">
-        <div class="sec-head">
-          <h2>What you leave with</h2>
-        </div>
-        <div class="take-grid">
-          <div class="take t1">
-            <span class="take-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 L4.5 13.5 H11 L9.5 22 L19 9.5 H12.5 Z"/></svg>
-            </span>
-            <h3>One working shortcut</h3>
-            <p>A workflow you built yourself, on your own laptop, for a task you really do every week. Not a demo account, not a hypothetical.</p>
-          </div>
-          <div class="take t2">
-            <span class="take-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5 C6.5 4 9.5 4 12 5.5 C14.5 4 17.5 4 20 5.5 V19 C17.5 17.5 14.5 17.5 12 19 C9.5 17.5 6.5 17.5 4 19 Z"/><path d="M12 5.5 V19"/></svg>
-            </span>
-            <h3>A starter pack of prompts</h3>
-            <p>Printed and digital prompts written for your line of work, ready to copy, paste, and adjust, including the safety checklist.</p>
-          </div>
-          <div class="take t3">
-            <span class="take-badge" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5 C7 16.5 3.5 13.2 3.5 9.3 C3.5 6.4 5.7 4.5 8.2 4.5 C9.7 4.5 11.1 5.2 12 6.3 C12.9 5.2 14.3 4.5 15.8 4.5 C18.3 4.5 20.5 6.4 20.5 9.3 C20.5 13.2 17 16.5 12 20.5 Z"/></svg>
-            </span>
-            <h3>People to call</h3>
-            <p>New contacts across town doing similar work, plus an open door for free follow-up help as you put the tools to use.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================= SETTING ================= -->
-      <section id="setting">
-        <div class="setting">
-          <div class="toon-frame">
-            <img src="images/library-scene.webp" alt="Cartoon illustration of a cozy public library where a diverse group of neighbors learn together around a round table with laptops, tablets, and notebooks, pastel bookshelves behind them" />
-          </div>
-          <div>
-            <h2>A community day, in a community place</h2>
-            <p>
-              The first session is planned for a <strong>local library or community center</strong>.
-              Libraries and community centers are where this town already goes to learn, they are
-              free to walk into, and they sit in the middle of every group this workshop is for.
-            </p>
-            <p>
-              Seats will be limited to keep the hands-on help real, and the room will be mixed on
-              purpose: professionals next to business owners, care providers next to coaches.
-            </p>
-            <div class="status-note">
-              <strong>Date and venue are being finalized.</strong> Register your interest below and
-              you will be the first to get the date, the location, and a seat reservation link.
-              Interest also helps us pick a room big enough.
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================= RESPONSIBLE USE ================= -->
-      <section id="responsible">
-        <div class="sec-head">
-          <h2>Doing this responsibly</h2>
-          <p>Many people in the room handle other people's sensitive information for a living. The workshop treats that as the starting point, not an afterthought.</p>
-        </div>
-        <div class="guard">
-          <div>
-            <h3>Keep private data out</h3>
-            <p>We practice on sample and scrubbed material, and cover exactly what should never be pasted into a general AI tool, client files, health details, and financial records included.</p>
-          </div>
-          <div>
-            <h3>A human checks everything</h3>
-            <p>AI drafts, people decide. Anything headed to a client, a family, or a filing gets read by the professional responsible for it first.</p>
-          </div>
-          <div>
-            <h3>Know the limits</h3>
-            <p>Tools can be confidently wrong. We cover the quick checks that catch errors before they reach a client, a parent, or a senior.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================= HOST BIO ================= -->
-      <section id="host">
-        <div class="host-bio">
-          <div class="headshot-ph" aria-hidden="true">Your headshot here</div>
-          <div>
-            <h2>Why I&rsquo;m hosting this</h2>
-            <p>
-              Hi, I&rsquo;m [Your Name]. I&rsquo;m a local [your role/business, e.g., Medicare advisor
-              and small business builder] who recently built an entire web platform from scratch using
-              AI tools, without a traditional tech team. I saw how much time these tools can save
-              independent professionals and local organizations, and how frustrating it is to learn
-              them alone. This workshop is simply a way to share what works with neighbors.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================= FAQ ================= -->
-      <section id="faq">
-        <div class="sec-head">
-          <h2>Common questions</h2>
-        </div>
-        <div class="faq-grid">
-          <details open>
-            <summary>Do I need a paid AI account?</summary>
-            <p>No. Everything we do can be done with free versions of tools like ChatGPT, Claude, or Gemini. If you already pay for one, bring it.</p>
-          </details>
-          <details open>
-            <summary>Is my client or business data safe?</summary>
-            <p>We&rsquo;ll cover data privacy in the first 15 minutes. You&rsquo;ll learn how to anonymize sensitive details and turn off training settings before you paste anything in.</p>
-          </details>
-          <details open>
-            <summary>What if I&rsquo;m not &ldquo;tech-savvy&rdquo;?</summary>
-            <p>You&rsquo;re in the right room. If you can send an email, you have all the technical background you need.</p>
-          </details>
-          <details open>
-            <summary>Is there a catch or a sales pitch?</summary>
-            <p>None. This is a free community session, no software upsells, no lead-gen traps.</p>
-          </details>
-        </div>
-      </section>
-
-      <!-- ================= INTEREST FORM ================= -->
+      <!-- ================= 4. SIGNUP + FOOTER ================= -->
       <div class="interest-band" id="interest">
-        <h2>Save a spot for the first session</h2>
-        <p>
-          Seats are kept small (around 20&ndash;25 people) so everyone gets hands-on help. Drop your
-          info below and I&rsquo;ll email you as soon as the date and room are locked.
-        </p>
+        <h2>Save a spot</h2>
+        <p>Capped at 25 seats so everyone gets hands-on help. Free tools only&mdash;no paid accounts needed.</p>
         <form id="interest-form" novalidate>
           <div class="form-grid">
             <div class="field">
-              <label for="f-name">Your name</label>
+              <label for="f-name">Name</label>
               <input id="f-name" name="name" type="text" autocomplete="name" required />
-            </div>
-            <div class="field">
-              <label for="f-org">Business or organization</label>
-              <input id="f-org" name="org" type="text" autocomplete="organization" />
-            </div>
-            <div class="field">
-              <label for="f-type">Type of business or organization</label>
-              <select id="f-type" name="type">
-                <option>CPA / Finance / Legal</option>
-                <option>Senior Services / Nonprofit</option>
-                <option>Local Retail / Service Business</option>
-                <option>Other</option>
-              </select>
             </div>
             <div class="field">
               <label for="f-email">Email</label>
               <input id="f-email" name="email" type="email" autocomplete="email" required />
             </div>
             <div class="field full">
-              <label for="f-task">Optional: What&rsquo;s one repetitive weekly task you&rsquo;d love to speed up?</label>
-              <textarea id="f-task" name="task" placeholder="For example: the weekly newsletter, client reminder emails, volunteer scheduling&hellip;"></textarea>
+              <label for="f-org">Your business or organization</label>
+              <input id="f-org" name="org" type="text" autocomplete="organization" required />
             </div>
           </div>
           <div class="form-actions">
             <button class="btn btn-butter" type="submit">Count Me In</button>
-            <p class="form-note">This opens your email app with everything filled in, addressed to the host. Nothing is stored on this page.</p>
+            <p class="form-note">Opens your email app with everything filled in, addressed to the host.</p>
           </div>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
       </div>
 
-      <!-- ================= FOOTER ================= -->
       <footer>
-        <div class="host">
-          <div class="avatar" aria-hidden="true">EU</div>
-          <p>
-            <strong>Hosted by Eric Ullrich.</strong> Eric is a local business owner who built and
-            runs his own practice day to day with AI tools, covering marketing, client follow-up,
-            operations, and finance with a small team. This workshop shares what actually works,
-            in plain language, with the businesses and organizations around him.
-          </p>
-        </div>
-        <div class="partner-callout">
-          <p>Want to co-host a Main Street AI session for your Chamber of Commerce, library, rotary club, or local association? <a href="mailto:[your-email@example.com]">Get in touch &rarr;</a></p>
-        </div>
-        <p class="fine">Main Street AI &middot; A first community day &middot; Date and venue to be announced to registered participants first.</p>
+        <p>Hosted by [Your Name], a local neighbor.</p>
+        <p>Want to co-host for your Chamber, library, or group? <a href="mailto:[your-email@example.com]">Email me &rarr;</a></p>
       </footer>
 
     </main>
@@ -725,19 +363,15 @@
           e.preventDefault();
           var name = document.getElementById('f-name').value.trim();
           var email = document.getElementById('f-email').value.trim();
-          if (!name || !email) {
-            status.textContent = 'Please add your name and email so we can send you the date when it is set.';
+          var org = document.getElementById('f-org').value.trim();
+          if (!name || !email || !org) {
+            status.textContent = 'Please fill in your name, email, and business or organization.';
             return;
           }
-          var org = document.getElementById('f-org').value.trim();
-          var type = document.getElementById('f-type').value;
-          var task = document.getElementById('f-task').value.trim();
           var lines = [
             'Name: ' + name,
             'Email: ' + email,
-            'Business or organization: ' + (org || '(not given)'),
-            'Role: ' + type,
-            'Repetitive weekly task to speed up: ' + (task || '(not given)')
+            'Business or organization: ' + org
           ];
           var subject = 'Main Street AI workshop interest: ' + name;
           var href = 'mailto:eric@candor.financial'
